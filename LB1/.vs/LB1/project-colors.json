@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "33379abc-ea40-417a-9053-013117741b13": {
+      "ProjectGuid": "33379abc-ea40-417a-9053-013117741b13",
+      "DisplayName": "LB1",
+      "ColorIndex": 0
+    },
+    "683611d5-6005-40fb-b6f3-09fd6032a78b": {
+      "ProjectGuid": "683611d5-6005-40fb-b6f3-09fd6032a78b",
+      "DisplayName": "ClassLibrary1",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
