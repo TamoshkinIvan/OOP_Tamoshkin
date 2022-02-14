@@ -40,6 +40,7 @@ namespace ClassLibrary1
             get => _age;
             set
             {
+                //TODO: to const
                 if (value > 120 || value <= 0)
                 {
                     throw new ArgumentException(("Invalid value, try again"));
@@ -58,6 +59,7 @@ namespace ClassLibrary1
 
             set
             {
+                //TODO: дубль
                 if (!InputCheck(value) || SpaceCheck(value))
                 {
                     throw new ArgumentException("Invalid value, try again");
@@ -76,7 +78,7 @@ namespace ClassLibrary1
 
             set
             {
-
+                //TODO: дубль
                 if (!InputCheck(value) || SpaceCheck(value))
                 {
                     throw new ArgumentException("Invalid value, try again");
@@ -99,14 +101,12 @@ namespace ClassLibrary1
         /// <param name="age">Person age</param>
         /// <param name="name">Person name</param>
         /// <param name="surname">Person surname</param>
-        
         public Person( string name, string surname, int age, PersonGender gender)
         {
             Name = name;
             Gender = gender;
             Age = age;
             Surname = surname;
-            
         }
 
         /// <summary>
@@ -114,10 +114,6 @@ namespace ClassLibrary1
         /// </summary>
         public  Person() : this("Ivan", "Tamoshkin", 23, PersonGender.Male)
         {}
-
-
-
-
 
         /// <summary>
         /// 
@@ -138,9 +134,8 @@ namespace ClassLibrary1
         /// <returns></returns>
         public bool SpaceCheck(string checkString)
         {
+            //TODO:
             return Regex.IsMatch(checkString, @" ");
         }
-
-
     }
 }
