@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
-namespace LabClasses
+namespace ClassLibrary1
 {
     /// <summary>
     /// Class Person
@@ -41,15 +37,12 @@ namespace LabClasses
         /// </summary>
         public int Age
         {
-            get
-            {
-                return _age;
-            }
+            get => _age;
             set
             {
-                if (value > 100 || value <= 0)
+                if (value > 120 || value <= 0)
                 {
-                    throw new ArgumentException(string.Format("Invalid value, try again"));
+                    throw new ArgumentException(("Invalid value, try again"));
 
                 }
                 _age = value;
@@ -61,31 +54,43 @@ namespace LabClasses
         /// </summary>
         public string Name
         {
-            get
-            {
-                return _name;
-            }
+            get => _name;
+
             set
             {
+                if (!InputCheck(value) || SpaceCheck(value))
+                {
+                    throw new ArgumentException("Invalid value, try again");
+                }
 
                 _name = value;
             }
         }
 
         /// <summary>
-        /// Person gender
+        /// Person name 
         /// </summary>
-        public PersonGender Gender
+        public string Surname
         {
-            get
-            {
-                return _gender;
-            }
+            get => _surname;
+
             set
             {
-                _gender = value;
+
+                if (!InputCheck(value) || SpaceCheck(value))
+                {
+                    throw new ArgumentException("Invalid value, try again");
+                }
+                _surname = value;
             }
         }
+
+        /// <summary>
+        /// Person gender
+        /// </summary>
+        public PersonGender Gender { get; set;  }
+
+
 
         /// <summary>
         /// Create person instance 
@@ -95,13 +100,45 @@ namespace LabClasses
         /// <param name="name">Person name</param>
         /// <param name="surname">Person surname</param>
         
-        public Person(PersonGender gender, int age, string name, string surname)
+        public Person( string name, string surname, int age, PersonGender gender)
         {
-            _name = name;
-            _gender = gender;
-            _age = age;
-            _surname = surname;
+            Name = name;
+            Gender = gender;
+            Age = age;
+            Surname = surname;
             
+        }
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public  Person() : this("Ivan", "Tamoshkin", 23, PersonGender.Male)
+        {}
+
+
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="checkString"></param>
+        /// <returns></returns>
+        public bool InputCheck(string checkString)
+        {
+            return Regex.IsMatch(checkString.ToLower(),
+                @"(^[a-z]+[-]?[a-z]+$)|(^[а-я]+[-]?[а-я]+$)|(^[a-zа-я]$)");
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="checkString"></param>
+        /// <returns></returns>
+        public bool SpaceCheck(string checkString)
+        {
+            return Regex.IsMatch(checkString, @" ");
         }
 
 

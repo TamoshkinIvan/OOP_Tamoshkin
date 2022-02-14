@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LabClasses;
+using ClassLibrary1;
 
 namespace LB1
 {
+    /// <summary>
+    /// Class Program
+    /// </summary>
     internal class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Entry point of application
+        /// </summary>
+        /// <param name="args"></param>
+        private static void Main(string[] args)
         {
-            Person tmpPerson = new Person();
-            PersonGender personGender;
+            var newPersonList = new PersonList();
+
+
         }
     }
 }

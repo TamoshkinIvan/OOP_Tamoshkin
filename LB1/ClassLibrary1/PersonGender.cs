@@ -1,4 +1,4 @@
-﻿namespace LabClasses
+﻿namespace ClassLibrary1
 {
     public enum PersonGender
     {

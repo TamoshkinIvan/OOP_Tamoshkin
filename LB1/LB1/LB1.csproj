@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj">
-      <Project>{683611D5-6005-40FB-B6F3-09FD6032A78B}</Project>
+      <Project>{683611d5-6005-40fb-b6f3-09fd6032a78b}</Project>
       <Name>ClassLibrary1</Name>
     </ProjectReference>
   </ItemGroup>

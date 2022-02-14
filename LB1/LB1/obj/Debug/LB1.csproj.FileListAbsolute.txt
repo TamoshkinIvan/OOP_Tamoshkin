@@ -1,0 +1,11 @@
+I:\OOP\OOP_Tamoshkin\LB1\LB1\obj\Debug\LB1.csproj.AssemblyReference.cache
+I:\OOP\OOP_Tamoshkin\LB1\LB1\obj\Debug\LB1.csproj.SuggestedBindingRedirects.cache
+I:\OOP\OOP_Tamoshkin\LB1\LB1\obj\Debug\LB1.csproj.CoreCompileInputs.cache
+I:\OOP\OOP_Tamoshkin\LB1\LB1\bin\Debug\LB1.exe.config
+I:\OOP\OOP_Tamoshkin\LB1\LB1\bin\Debug\LB1.exe
+I:\OOP\OOP_Tamoshkin\LB1\LB1\bin\Debug\LB1.pdb
+I:\OOP\OOP_Tamoshkin\LB1\LB1\bin\Debug\ClassLibrary1.dll
+I:\OOP\OOP_Tamoshkin\LB1\LB1\bin\Debug\ClassLibrary1.pdb
+I:\OOP\OOP_Tamoshkin\LB1\LB1\obj\Debug\LB1.csproj.CopyComplete
+I:\OOP\OOP_Tamoshkin\LB1\LB1\obj\Debug\LB1.exe
+I:\OOP\OOP_Tamoshkin\LB1\LB1\obj\Debug\LB1.pdb
