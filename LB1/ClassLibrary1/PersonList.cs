@@ -29,13 +29,6 @@ namespace ClassLibrary1
         {
 
         }
-        /// <summary>
-        /// Remove last person in list
-        /// </summary>
-        public void RemoveLastInstance()
-        {
-            Array.Resize(ref _persons, Length -1);
-        }
 
     }
 }
