@@ -18,8 +18,18 @@ namespace LB1
         /// <param name="args"></param>
         private static void Main(string[] args)
         {
-            var newPersonList = new PersonList();
+            var personList1 = new PersonList();
 
+            try
+            {
+                var person1 = new Person("Ivan", "Tamoshkin",
+                    130, PersonGender.Male);
+                personList1.AddPerson(person1);
+            }
+            catch (AggregateException e)
+            {
+                Console.WriteLine(e.Message);
+            }
 
         }
     }

@@ -1,6 +1,9 @@
 ﻿namespace ClassLibrary1
 {
-    //TODO: XML
+    //TODO: XML(+)
+    /// <summary>
+    /// 
+    /// </summary>
     public enum PersonGender
     {
         /// <summary>

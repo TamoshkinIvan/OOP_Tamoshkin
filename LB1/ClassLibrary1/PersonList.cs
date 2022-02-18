@@ -15,19 +15,56 @@ namespace ClassLibrary1
         /// Person array
         /// </summary>
         private Person[] _persons = new Person[0];
-
-        /// <summary>
-        /// Get person list length
-        /// </summary>
-        public int Length => _persons.Length;
-
+        
         /// <summary>
         /// Add a new person in list
         /// </summary>
         /// <param name="person"></param>
         public void AddPerson(Person person)
         {
+            int lengthArray = _persons.Length;
+            Array.Resize(ref _persons, lengthArray + 1);
+            _persons[lengthArray] = person;
 
+        }
+        /// <summary>
+        /// Delete the last person in list
+        /// </summary>
+        public void DeleteLastPerson()
+        {
+            int lengthArray = _persons.Length;
+            if (lengthArray != 0)
+            {
+                Array.Resize(ref _persons, lengthArray - 1);
+            }
+        }
+
+        /// <summary>
+        /// Get person by index
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
+        public Person SearchByIndex(int index)
+        {
+            return _persons[index];
+        }
+
+        /// <summary>
+        /// Get index by name
+        /// </summary>
+        /// <param name="person"></param>
+        /// <returns></returns>
+        public int SearchByName(Person person)
+        {
+            return Array.IndexOf(_persons, person);
+        }
+
+        /// <summary>
+        /// Clear the list
+        /// </summary>
+        public void ClearList()
+        {
+            Array.Resize(ref _persons, 0);
         }
 
     }
