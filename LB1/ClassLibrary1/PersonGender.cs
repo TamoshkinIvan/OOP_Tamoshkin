@@ -2,7 +2,7 @@
 {
     //TODO: XML(+)
     /// <summary>
-    /// 
+    /// Enum person gender
     /// </summary>
     public enum PersonGender
     {
