@@ -189,5 +189,36 @@ namespace ClassLibrary1
         {
             return $"{this._name} {this._surname} {this._age} {this.Gender}";
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Language CheckLanguage()
+        {
+            string text = "При-вет";
+            bool rus = false;
+            bool eng = false;
+
+            text = text.ToLower();
+
+            foreach (char c in text)
+            {
+                if ((c >= 'а' && c <= 'я'))
+                {
+                    rus = true;
+                }
+                else if ((c >= 'a' && c <= 'z'))
+                {
+                    eng = true;
+                }
+                else if (c == '-') { }
+            }
+
+            if (eng & !rus) return Language.English;
+            if (rus & !eng) return Language.Russian;
+            return Language.Other;
+
+        }
     }
 }

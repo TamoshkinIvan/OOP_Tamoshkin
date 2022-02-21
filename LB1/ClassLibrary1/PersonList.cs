@@ -27,6 +27,7 @@ namespace ClassLibrary1
             _persons[lengthArray] = person;
 
         }
+
         /// <summary>
         /// Delete the last person in list
         /// </summary>
@@ -65,6 +66,26 @@ namespace ClassLibrary1
         public void ClearList()
         {
             Array.Resize(ref _persons, 0);
+        }
+
+        /// <summary>
+        /// Delete element by index 
+        /// </summary>
+        /// <param name="index"></param>
+        public void DeleteByIndex( int index)
+        {
+           _persons = _persons.Where((_,indexArray) => index != indexArray).ToArray();
+        }
+
+        public string Info()
+        {
+            string strInfo = "";
+            foreach (Person person in _persons)
+            {
+                strInfo += "\n" + person.GetPersonInfo();
+            }
+
+            return strInfo;
         }
 
     }
