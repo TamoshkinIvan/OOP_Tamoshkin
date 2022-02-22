@@ -28,18 +28,20 @@ namespace ClassLibrary1
 
         private int _age;
 
+        //TODO:
         /// <summary>
         /// Person age
         /// </summary>
 
         public const int MaxAge = 120;
-        public  int MinAge = 0;
+        public const int MinAge = 0;
+
+
         public int Age
         {
             get => _age;
             set
             {
-                //TODO: to const (+)
                 if (value > MaxAge || value <= MinAge)
                 {
                     throw new ArgumentException(("Please enter an age in range" +
@@ -56,10 +58,7 @@ namespace ClassLibrary1
         public string Name
         {
             get => _name;
-            
-            //TODO: дубль (+)
             set => _name = StringControl(value);
-
         }
 
 
@@ -70,7 +69,6 @@ namespace ClassLibrary1
         public string Surname
         {
             get => _surname;
-            //TODO: дубль (+)
             set => _surname = StringControl(value);
         }
 
@@ -78,8 +76,6 @@ namespace ClassLibrary1
         /// Person gender
         /// </summary>
         public PersonGender Gender { get; set;  }
-
-
 
         /// <summary>
         /// Create person instance 
@@ -95,6 +91,7 @@ namespace ClassLibrary1
             Age = age;
             Surname = surname;
         }
+
         /// <summary>
         /// Default person
         /// </summary>
@@ -109,8 +106,6 @@ namespace ClassLibrary1
         /// <returns></returns>
         public bool SpaceCheck(string checkString)
         {
-            //Regex.IsMatch(checkString, @" ");
-            //TODO(+):
             return checkString.Contains(" ");
         }
 
@@ -140,8 +135,6 @@ namespace ClassLibrary1
                                             "should be in the same language.");
             }
 
-
-
             if (checkString == null)
             {
                 throw new ArgumentException("Entered value is empty. \n" +
@@ -159,12 +152,14 @@ namespace ClassLibrary1
         {
             Random rnd = new Random();
 
+            //TODO: RSDN
             string[] Names =
             {
                 "Alex", "Joe", "Ashley",
                 "Casey", "Jordan", "Taylor"
             };
 
+            //TODO: RSDN
             string[] Surnames =
             {
                 "Jones", "Tramp", "Phillips",
