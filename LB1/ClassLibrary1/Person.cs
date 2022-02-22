@@ -196,6 +196,7 @@ namespace ClassLibrary1
         /// <returns></returns>
         public Language CheckLanguage(string text)
         {
+            //TODO: naming
             bool rus = false;
             bool eng = false;
 
@@ -219,10 +220,10 @@ namespace ClassLibrary1
                 }
             }
 
+            //TODO:
             if (eng & !rus) return Language.English;
             if (rus & !eng) return Language.Russian;
             return Language.Other;
-
         }
     }
 }

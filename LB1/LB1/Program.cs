@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using ClassLibrary1;
 
 
@@ -55,19 +50,16 @@ namespace LB1
             PrintPersonList(personList2);
 
             ReadPerson();
+            //TODO: добавить вывод информации о введённой персоне.
             Console.ReadKey();
-
-
         }
 
-
+        //TODO: XML
         private static void PrintPersonList(PersonList personList)
-
         {
             Console.WriteLine("\n////////////");
             Console.WriteLine(personList.Info());
             Console.WriteLine("\n////////////");
-
         }
 
         /// <summary>
