@@ -4,3 +4,9 @@ I:\OOP\OOP_Tamoshkin\LB1\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
 I:\OOP\OOP_Tamoshkin\LB1\ClassLibrary1\obj\Debug\ClassLibrary1.dll
 I:\OOP\OOP_Tamoshkin\LB1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
 I:\OOP\OOP_Tamoshkin\LB1\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.AssemblyReference.cache
+C:\Users\alexe\source\repos\TPU\о-5км01\Tamoshkin\LB1\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\Users\alexe\source\repos\TPU\о-5км01\Tamoshkin\LB1\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\Users\alexe\source\repos\TPU\о-5км01\Tamoshkin\LB1\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.AssemblyReference.cache
+C:\Users\alexe\source\repos\TPU\о-5км01\Tamoshkin\LB1\ClassLibrary1\obj\Debug\ClassLibrary1.csproj.CoreCompileInputs.cache
+C:\Users\alexe\source\repos\TPU\о-5км01\Tamoshkin\LB1\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\Users\alexe\source\repos\TPU\о-5км01\Tamoshkin\LB1\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
