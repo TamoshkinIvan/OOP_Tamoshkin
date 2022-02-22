@@ -21,11 +21,6 @@ namespace ClassLibrary1
 
         private string _surname;
         
-        /// <summary>
-        /// Person gender
-        /// </summary>
-
-        private PersonGender _gender;
 
         /// <summary>
         /// Person age
@@ -100,23 +95,11 @@ namespace ClassLibrary1
             Age = age;
             Surname = surname;
         }
-
         /// <summary>
-        /// Default constructor
+        /// Default person
         /// </summary>
-        public  Person() : this("Ivan", "Tamoshkin", 23, PersonGender.Male)
+        public Person() : this("Ivan", "Tamoshkin", 56, PersonGender.Male)
         {}
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="checkString"></param>
-        /// <returns></returns>
-        public bool InputCheck(string checkString)
-        {
-            return Regex.IsMatch(checkString.ToLower(),
-                @"(^[a-z]+[-]?[a-z]+$)|(^[а-я]+[-]?[а-я]+$)|(^[a-zа-я]$)");
-        }
 
 
         /// <summary>
@@ -139,10 +122,32 @@ namespace ClassLibrary1
         /// <exception cref="ArgumentException"></exception>
         public string StringControl(string checkString)
         {
-            if (!InputCheck(checkString) || SpaceCheck(checkString))
+            if ( SpaceCheck(checkString))
             {
-                throw new ArgumentException("Invalid value, try again");
+                throw new ArgumentException("There a space in the entered string.\n" +
+                                            " Please enter without spaces. ");
             }
+            
+            if (CheckLanguage(checkString) == Language.Other)
+            {
+                throw new ArgumentException("The person name and surname " +
+                                            "should be in russian or english and without digits.");
+            }
+
+            if (_name != null && CheckLanguage(checkString) != CheckLanguage(_name))
+            {
+                throw new ArgumentException("The person name and surname " +
+                                            "should be in the same language.");
+            }
+
+
+
+            if (checkString == null)
+            {
+                throw new ArgumentException("Entered value is empty. \n" +
+                                            "Please enter your name or surname.");
+            }
+
             return checkString;
 
         }
@@ -194,9 +199,8 @@ namespace ClassLibrary1
         /// 
         /// </summary>
         /// <returns></returns>
-        public Language CheckLanguage()
+        public Language CheckLanguage(string text)
         {
-            string text = "При-вет";
             bool rus = false;
             bool eng = false;
 
@@ -213,6 +217,11 @@ namespace ClassLibrary1
                     eng = true;
                 }
                 else if (c == '-') { }
+                else
+                {
+                    eng = true;
+                    rus = true;
+                }
             }
 
             if (eng & !rus) return Language.English;
