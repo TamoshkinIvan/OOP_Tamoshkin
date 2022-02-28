@@ -37,9 +37,7 @@ namespace ClassLibrary1
         /// min person age
         /// </summary>
         public const int MinAge = 0;
-
-
-        //TODO:(+)
+        
         /// <summary>
         /// Person age
         /// </summary>
@@ -167,15 +165,13 @@ namespace ClassLibrary1
         public static Person GetRandomPerson()
         {
             Random rnd = new Random();
-
-            //TODO: RSDN (+)
+            
             string[] names =
             {
                 "Alex", "Joe", "Ashley",
                 "Casey", "Jordan", "Taylor"
             };
-
-            //TODO: RSDN (+)
+            
             string[] surnames =
             {
                 "Jones", "Tramp", "Phillips",
@@ -206,13 +202,13 @@ namespace ClassLibrary1
             return $"{this._name} {this._surname} {this._age} {this.Gender}";
         }
 
+        //TODO:
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
         public Language CheckLanguage(string text)
         {
-            //TODO: naming(+)
             bool isRus = false;
             bool isEng = false;
 
@@ -235,10 +231,11 @@ namespace ClassLibrary1
                     isRus = true;
                 }
             }
-
-            //TODO:(+)
+            
             if (isEng && !isRus) return Language.English;
+            
             if (isRus && !isEng) return Language.Russian;
+            
             return Language.Other;
         }
     }

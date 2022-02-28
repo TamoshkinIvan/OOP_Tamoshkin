@@ -68,12 +68,10 @@ namespace LB1
             var inputPerson =  ReadPerson();
             personList3.AddPerson(inputPerson);
             
-            //TODO: добавить вывод информации о введённой персоне.(+)
             PrintPersonList(personList3);
             Console.ReadKey();
         }
-
-        //TODO: XML(+)
+        
         /// <summary>
         /// Print person list
         /// </summary>
