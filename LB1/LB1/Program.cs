@@ -20,6 +20,8 @@ namespace LB1
 
             var personList2 = new PersonList();
 
+            var personList3 = new PersonList();
+
             personList2.DeleteLastPerson();
 
             try
@@ -46,20 +48,41 @@ namespace LB1
                 Console.WriteLine(e.Message);
             }
 
+            Console.WriteLine("Person with index 0 added to list 1");
+            Console.WriteLine("Person list 1");
             PrintPersonList(personList1);
+            Console.WriteLine("Person list 2");
             PrintPersonList(personList2);
 
-            ReadPerson();
-            //TODO: добавить вывод информации о введённой персоне.
+            personList1.DeleteByIndex(0);
+            Console.WriteLine("Person list 1");
+            PrintPersonList(personList1);
+
+            Console.WriteLine("Person with index 1 deleted\n");
+
+            personList1.ClearList();
+            Console.WriteLine("Person list 1");
+            PrintPersonList(personList1);
+            Console.WriteLine("Person list 1 removed");
+
+            var inputPerson =  ReadPerson();
+            personList3.AddPerson(inputPerson);
+            
+            //TODO: добавить вывод информации о введённой персоне.(+)
+            PrintPersonList(personList3);
             Console.ReadKey();
         }
 
-        //TODO: XML
+        //TODO: XML(+)
+        /// <summary>
+        /// Print person list
+        /// </summary>
+        /// <param name="personList"></param>
         private static void PrintPersonList(PersonList personList)
         {
-            Console.WriteLine("\n////////////");
+            Console.WriteLine("////////////");
             Console.WriteLine(personList.Info());
-            Console.WriteLine("\n////////////");
+            Console.WriteLine("\n////////////\n");
         }
 
         /// <summary>
@@ -68,7 +91,7 @@ namespace LB1
         /// <returns>Instance person</returns>
         private static Person ReadPerson()
         {
-            Person defaultPerson = new Person();
+            var defaultPerson = new Person( 10, PersonGender.Female);
             var actionsTupleList = new List<(Action Action, string Message)>
             {
                 (

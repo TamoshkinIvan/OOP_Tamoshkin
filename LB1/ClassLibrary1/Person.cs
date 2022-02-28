@@ -28,15 +28,21 @@ namespace ClassLibrary1
 
         private int _age;
 
-        //TODO:
         /// <summary>
-        /// Person age
+        /// Max person age
         /// </summary>
-
         public const int MaxAge = 120;
+        
+        /// <summary>
+        /// min person age
+        /// </summary>
         public const int MinAge = 0;
 
 
+        //TODO:(+)
+        /// <summary>
+        /// Person age
+        /// </summary>
         public int Age
         {
             get => _age;
@@ -87,9 +93,9 @@ namespace ClassLibrary1
         public Person( string name, string surname, int age, PersonGender gender)
         {
             Name = name;
-            Gender = gender;
             Age = age;
             Surname = surname;
+            Gender = gender;
         }
 
         /// <summary>
@@ -98,6 +104,16 @@ namespace ClassLibrary1
         public Person() : this("Ivan", "Tamoshkin", 56, PersonGender.Male)
         {}
 
+        /// <summary>
+        /// Instance for console input 
+        /// </summary>
+        /// <param name="age"></param>
+        /// <param name="gender"></param>
+        public Person( int age, PersonGender gender)
+        {
+            Age = age;
+            Gender = gender;
+        }
 
         /// <summary>
         /// Detect space in string
@@ -152,31 +168,31 @@ namespace ClassLibrary1
         {
             Random rnd = new Random();
 
-            //TODO: RSDN
-            string[] Names =
+            //TODO: RSDN (+)
+            string[] names =
             {
                 "Alex", "Joe", "Ashley",
                 "Casey", "Jordan", "Taylor"
             };
 
-            //TODO: RSDN
-            string[] Surnames =
+            //TODO: RSDN (+)
+            string[] surnames =
             {
                 "Jones", "Tramp", "Phillips",
                 "Kill", "Black", "Freeman"
             };
 
             int rndAge = rnd.Next(MaxAge);
-            int rndGender = rnd.Next(Names.Length);
+            int rndGender = rnd.Next(names.Length);
 
             if (rndGender % 2 == 0)
             {
-                return new Person(Names[rnd.Next(Names.Length)],
-                    Surnames[rnd.Next(Surnames.Length)], rndAge, PersonGender.Male);
+                return new Person(names[rnd.Next(names.Length)],
+                    surnames[rnd.Next(surnames.Length)], rndAge, PersonGender.Male);
             }
 
-            return new Person(Names[rnd.Next(Names.Length)],
-                Surnames[rnd.Next(Surnames.Length)], rndAge, PersonGender.Female);
+            return new Person(names[rnd.Next(names.Length)],
+                surnames[rnd.Next(surnames.Length)], rndAge, PersonGender.Female);
 
         }
 
@@ -196,9 +212,9 @@ namespace ClassLibrary1
         /// <returns></returns>
         public Language CheckLanguage(string text)
         {
-            //TODO: naming
-            bool rus = false;
-            bool eng = false;
+            //TODO: naming(+)
+            bool isRus = false;
+            bool isEng = false;
 
             text = text.ToLower();
 
@@ -206,23 +222,23 @@ namespace ClassLibrary1
             {
                 if ((c >= 'а' && c <= 'я'))
                 {
-                    rus = true;
+                    isRus = true;
                 }
                 else if ((c >= 'a' && c <= 'z'))
                 {
-                    eng = true;
+                    isEng = true;
                 }
                 else if (c == '-') { }
                 else
                 {
-                    eng = true;
-                    rus = true;
+                    isEng = true;
+                    isRus = true;
                 }
             }
 
-            //TODO:
-            if (eng & !rus) return Language.English;
-            if (rus & !eng) return Language.Russian;
+            //TODO:(+)
+            if (isEng && !isRus) return Language.English;
+            if (isRus && !isEng) return Language.Russian;
             return Language.Other;
         }
     }

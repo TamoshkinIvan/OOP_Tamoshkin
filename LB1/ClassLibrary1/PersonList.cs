@@ -77,7 +77,11 @@ namespace ClassLibrary1
            _persons = _persons.Where((_,indexArray) => index != indexArray).ToArray();
         }
 
-        //TODO: XML
+        //TODO: XML(+)
+        /// <summary>
+        /// Display person information
+        /// </summary>
+        /// <returns></returns>
         public string Info()
         {
             string strInfo = "";
