@@ -141,7 +141,7 @@ namespace LB1
                         }
                     },
                     "Choose gender of person." +
-                    "Enter 1 for male or 2 for female")
+                    "Enter 1 for male or 2 for female and 3 for unknown gender.")
             };
 
             foreach (var actionTuple in actionsTupleList)
