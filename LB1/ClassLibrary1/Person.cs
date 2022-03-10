@@ -202,7 +202,7 @@ namespace ClassLibrary1
             return $"{this._name} {this._surname} {this._age} {this.Gender}";
         }
 
-        //TODO:
+        //аTODO:
         /// <summary>
         /// 
         /// </summary>
