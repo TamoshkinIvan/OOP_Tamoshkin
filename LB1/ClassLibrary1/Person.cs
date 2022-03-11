@@ -12,20 +12,16 @@ namespace ClassLibrary1
         /// <summary>
         /// Person name
         /// </summary>
-
         private string _name;
         
         /// <summary>
         /// Person surname
         /// </summary>
-
         private string _surname;
         
-
         /// <summary>
         /// Person age
         /// </summary>
-
         private int _age;
 
         /// <summary>
@@ -64,8 +60,6 @@ namespace ClassLibrary1
             get => _name;
             set => _name = StringControl(value);
         }
-
-
 
         /// <summary>
         /// Person name 
@@ -159,7 +153,7 @@ namespace ClassLibrary1
 
         }
         /// <summary>
-        /// 
+        /// Get random person 
         /// </summary>
         /// <returns></returns>
         public static Person GetRandomPerson()
@@ -196,7 +190,6 @@ namespace ClassLibrary1
         /// Get person info 
         /// </summary>
         /// <returns></returns>
-
         public string GetPersonInfo()
         {
             return $"{this._name} {this._surname} {this._age} {this.Gender}";
@@ -204,7 +197,7 @@ namespace ClassLibrary1
 
         //TODO(+):
         /// <summary>
-        /// 
+        /// Check string language
         /// </summary>
         /// <returns></returns>
         public Language CheckLanguage(string text)
