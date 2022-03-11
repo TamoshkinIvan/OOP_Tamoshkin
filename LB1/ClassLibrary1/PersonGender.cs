@@ -5,12 +5,8 @@
     /// </summary>
     public enum PersonGender
     {
-
         Male,
-
         Female,
-
         Unknown
-
     }
 }
