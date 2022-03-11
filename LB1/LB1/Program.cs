@@ -16,6 +16,9 @@ namespace LB1
         /// <param name="args"></param>
         private static void Main(string[] args)
         {
+            System.Console.OutputEncoding = System.Text.Encoding.Unicode;
+            System.Console.InputEncoding = System.Text.Encoding.Unicode;
+
             var personList1 = new PersonList();
 
             var personList2 = new PersonList();
