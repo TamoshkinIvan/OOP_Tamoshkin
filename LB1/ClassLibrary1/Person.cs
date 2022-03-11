@@ -149,6 +149,12 @@ namespace ClassLibrary1
                                             "Please enter your name or surname.");
             }
 
+            if (CheckCapital(checkString))
+            {
+                throw new ArgumentException("First and last name must be capitalized. \n" +
+                                            "Please enter a capitalized string.");
+            }
+
             return checkString;
 
         }
@@ -229,6 +235,15 @@ namespace ClassLibrary1
             if (isRus && !isEng) return Language.Russian;
             
             return Language.Other;
+        }
+        /// <summary>
+        /// Check for capital letter 
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public bool CheckCapital(string text)
+        {
+            return Char.IsLower(text, 0);
         }
     }
 }
