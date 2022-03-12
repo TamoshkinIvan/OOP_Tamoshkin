@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace ClassLibrary1
@@ -236,6 +237,7 @@ namespace ClassLibrary1
             
             return Language.Other;
         }
+
         /// <summary>
         /// Check for capital letter 
         /// </summary>
@@ -243,7 +245,10 @@ namespace ClassLibrary1
         /// <returns></returns>
         public bool CheckCapital(string text)
         {
-            return Char.IsLower(text, 0);
+            if (text.Count(Char.IsUpper) != 1 || Char.IsLower(text, 0)) return true;
+            
+            return false;
+
         }
     }
 }
