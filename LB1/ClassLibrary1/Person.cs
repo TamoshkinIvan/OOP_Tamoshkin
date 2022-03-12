@@ -245,10 +245,7 @@ namespace ClassLibrary1
         /// <returns></returns>
         public bool CheckCapital(string text)
         {
-            if (text.Count(Char.IsUpper) != 1 || Char.IsLower(text, 0)) return true;
-            
-            return false;
-
+            return text.Count(Char.IsUpper) != 1 || Char.IsLower(text, 0);
         }
     }
 }
