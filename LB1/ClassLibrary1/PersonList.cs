@@ -1,35 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClassLibrary1
 {
     /// <summary>
-    /// Class person list
+    /// Class personBase list
     /// </summary>
     public class PersonList
     {
         /// <summary>
-        /// Person array
+        /// PersonBase array
         /// </summary>
-        private Person[] _persons = new Person[0];
+        private PersonBase[] _persons = new PersonBase[0];
         
         /// <summary>
-        /// Add a new person in list
+        /// Add a new personBase in list
         /// </summary>
-        /// <param name="person"></param>
-        public void AddPerson(Person person)
+        /// <param name="personBase"></param>
+        public void AddPerson(PersonBase personBase)
         {
             int lengthArray = _persons.Length;
             Array.Resize(ref _persons, lengthArray + 1);
-            _persons[lengthArray] = person;
+            _persons[lengthArray] = personBase;
 
         }
 
         /// <summary>
-        /// Delete the last person in list
+        /// Delete the last personBase in list
         /// </summary>
         public void DeleteLastPerson()
         {
@@ -41,11 +38,11 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// Get person by index
+        /// Get personBase by index
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        public Person SearchByIndex(int index)
+        public PersonBase SearchByIndex(int index)
         {
             return _persons[index];
         }
@@ -53,11 +50,11 @@ namespace ClassLibrary1
         /// <summary>
         /// Get index by name
         /// </summary>
-        /// <param name="person"></param>
+        /// <param name="personBase"></param>
         /// <returns></returns>
-        public int SearchByName(Person person)
+        public int SearchByName(PersonBase personBase)
         {
-            return Array.IndexOf(_persons, person);
+            return Array.IndexOf(_persons, personBase);
         }
 
         /// <summary>
@@ -84,7 +81,7 @@ namespace ClassLibrary1
         public string Info()
         {
             string strInfo = "";
-            foreach (Person person in _persons)
+            foreach (PersonBase person in _persons)
             {
                 strInfo += "\n" + person.GetPersonInfo();
             }

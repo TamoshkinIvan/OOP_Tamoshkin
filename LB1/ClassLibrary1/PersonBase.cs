@@ -1,29 +1,32 @@
 ﻿using System;
-using System.Data;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace ClassLibrary1
 {
     /// <summary>
-    /// Class Person
+    /// Class PersonBase
     /// </summary>
-    public class Person
+    public  abstract class PersonBase
     {
         /// <summary>
-        /// Person name
+        /// PersonBase name
         /// </summary>
         private string _name;
         
         /// <summary>
-        /// Person surname
+        /// PersonBase surname
         /// </summary>
         private string _surname;
         
         /// <summary>
-        /// Person age
+        /// PersonBase age
         /// </summary>
         private int _age;
+
+        /// <summary>
+        /// Adult age
+        /// </summary>
+        public const int  AdultAge = 18;
 
         /// <summary>
         /// Max person age
@@ -34,27 +37,14 @@ namespace ClassLibrary1
         /// min person age
         /// </summary>
         public const int MinAge = 0;
-        
+
         /// <summary>
-        /// Person age
+        /// PersonBase age
         /// </summary>
-        public int Age
-        {
-            get => _age;
-            set
-            {
-                if (value > MaxAge || value <= MinAge)
-                {
-                    throw new ArgumentException(("Please enter an age in range" +
-                                                 $"between {MinAge} and {MaxAge}"));
-
-                }
-                _age = value;
-            }
-        }
+        public abstract int Age { get; set; }
 
         /// <summary>
-        /// Person name 
+        /// PersonBase name 
         /// </summary>
         public string Name
         {
@@ -63,7 +53,7 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// Person name 
+        /// PersonBase name 
         /// </summary>
         public string Surname
         {
@@ -72,41 +62,35 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// Person gender
+        /// PersonBase gender
         /// </summary>
         public PersonGender Gender { get; set;  }
 
         /// <summary>
         /// Create person instance 
         /// </summary>
-        /// <param name="gender">Person gender</param>
-        /// <param name="age">Person age</param>
-        /// <param name="name">Person name</param>
-        /// <param name="surname">Person surname</param>
-        public Person( string name, string surname, int age, PersonGender gender)
+        /// <param name="gender">PersonBase gender</param>
+        /// <param name="name">PersonBase name</param>
+        /// <param name="surname">PersonBase surname</param>
+        protected PersonBase( string name, string surname, PersonGender gender)
         {
             Name = name;
-            Age = age;
             Surname = surname;
             Gender = gender;
         }
-
-        /// <summary>
-        /// Default person
-        /// </summary>
-        public Person() : this("Ivan", "Tamoshkin", 56, PersonGender.Male)
-        {}
 
         /// <summary>
         /// Instance for console input 
         /// </summary>
         /// <param name="age"></param>
         /// <param name="gender"></param>
-        public Person( int age, PersonGender gender)
+        protected PersonBase( int age, PersonGender gender)
         {
             Age = age;
+            _age = age;
             Gender = gender;
         }
+
 
         /// <summary>
         /// Detect space in string
@@ -159,45 +143,46 @@ namespace ClassLibrary1
             return checkString;
 
         }
+
         /// <summary>
         /// Get random person 
         /// </summary>
         /// <returns></returns>
-        public static Person GetRandomPerson()
-        {
-            Random rnd = new Random();
-            
-            string[] names =
-            {
-                "Alex", "Joe", "Ashley",
-                "Casey", "Jordan", "Taylor"
-            };
-            
-            string[] surnames =
-            {
-                "Jones", "Tramp", "Phillips",
-                "Kill", "Black", "Freeman"
-            };
-
-            int rndAge = rnd.Next(MaxAge);
-            int rndGender = rnd.Next(names.Length);
-
-            if (rndGender % 2 == 0)
-            {
-                return new Person(names[rnd.Next(names.Length)],
-                    surnames[rnd.Next(surnames.Length)], rndAge, PersonGender.Male);
-            }
-
-            return new Person(names[rnd.Next(names.Length)],
-                surnames[rnd.Next(surnames.Length)], rndAge, PersonGender.Female);
-
-        }
-
-        /// <summary>
-        /// Get person info 
-        /// </summary>
-        /// <returns></returns>
-        public string GetPersonInfo()
+        //public abstract PersonBase GetRandomPerson();
+        //{
+        //    Random rnd = new Random();
+        //    
+        //    string[] names =
+        //    {
+        //        "Alex", "Joe", "Ashley",
+        //        "Casey", "Jordan", "Taylor"
+        //    };
+        //    
+        //    string[] surnames =
+        //    {
+        //        "Jones", "Tramp", "Phillips",
+        //        "Kill", "Black", "Freeman"
+        //    };
+        //
+        //    int rndAge = rnd.Next(MaxAge);
+        //    int rndGender = rnd.Next(names.Length);
+        //
+        //    //if (rndGender % 2 == 0)
+        //    //{
+        //    //    return new Adult(names[rnd.Next(names.Length)],
+        //    //        surnames[rnd.Next(surnames.Length)], rndAge, PersonGender.Male, FamilyStatus.Divorced);
+        //    ///}
+        //    //
+        //    //return new Adult(names[rnd.Next(names.Length)],
+        //    //    surnames[rnd.Next(surnames.Length)], rndAge, PersonGender.Female, FamilyStatus.Divorced);
+        //
+        //}
+        
+        ///// <summary>
+        ///// Get person info 
+        ///// </summary>
+        //// <returns></returns>
+        protected internal string GetPersonInfo()
         {
             return $"{this._name} {this._surname} {this._age} {this.Gender}";
         }
@@ -208,12 +193,12 @@ namespace ClassLibrary1
         /// <returns></returns>
         public Language CheckLanguage(string text)
         {
-            bool isRus = false;
-            bool isEng = false;
+            var isRus = false;
+            var isEng = false;
 
             text = text.ToLower();
 
-            foreach (char c in text)
+            foreach (var c in text)
             {
                 if ((c >= 'а' && c <= 'я'))
                 {
@@ -245,7 +230,7 @@ namespace ClassLibrary1
         /// <returns></returns>
         public bool CheckCapital(string text)
         {
-            return text.Count(Char.IsUpper) != 1 || Char.IsLower(text, 0);
+            return text.Count(char.IsUpper) != 1 || char.IsLower(text, 0);
         }
     }
 }

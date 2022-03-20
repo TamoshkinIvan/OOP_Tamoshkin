@@ -29,8 +29,7 @@ namespace LB1
 
             try
             {
-                var person1 = new Person("Ivan", "Tamoshkin",
-                    100, PersonGender.Male);
+                var person1 = new Adult (12, 23, 26, PersonGender.Female, FamilyStatus.Married, null);
                 personList1.AddPerson(person1);
             }
             catch (AggregateException e)
@@ -38,9 +37,9 @@ namespace LB1
                 Console.WriteLine(e.Message);
             }
 
-            var person = Person.GetRandomPerson();
+            //var person = PersonBase.GetRandomPerson();
 
-            personList1.AddPerson(person);
+            //personList1.AddPerson(person);
 
             try
             {
@@ -51,22 +50,22 @@ namespace LB1
                 Console.WriteLine(e.Message);
             }
 
-            Console.WriteLine("Person with index 0 added to list 1");
-            Console.WriteLine("Person list 1");
+            Console.WriteLine("PersonBase with index 0 added to list 1");
+            Console.WriteLine("PersonBase list 1");
             PrintPersonList(personList1);
-            Console.WriteLine("Person list 2");
+            Console.WriteLine("PersonBase list 2");
             PrintPersonList(personList2);
 
             personList1.DeleteByIndex(0);
-            Console.WriteLine("Person list 1");
+            Console.WriteLine("PersonBase list 1");
             PrintPersonList(personList1);
 
-            Console.WriteLine("Person with index 1 deleted\n");
+            Console.WriteLine("PersonBase with index 1 deleted\n");
 
             personList1.ClearList();
-            Console.WriteLine("Person list 1");
+            Console.WriteLine("PersonBase list 1");
             PrintPersonList(personList1);
-            Console.WriteLine("Person list 1 removed");
+            Console.WriteLine("PersonBase list 1 removed");
 
             var inputPerson =  ReadPerson();
             personList3.AddPerson(inputPerson);
@@ -90,9 +89,10 @@ namespace LB1
         /// Inter person from console
         /// </summary>
         /// <returns>Instance person</returns>
-        private static Person ReadPerson()
+        private static PersonBase ReadPerson()
         {
-            var defaultPerson = new Person( 10, PersonGender.Female);
+            /// Тут добавить swich case для выбора взрослого, либо ребенка
+            var defaultPerson = new Adult();
             var actionsTupleList = new List<(Action Action, string Message)>
             {
                 (
@@ -139,7 +139,7 @@ namespace LB1
                             default:
                             {
                                 throw new ArgumentException
-                                    ("Please enter 1 or 2");
+                                    ("Please enter 1, 2 or 3");
                             }
                         }
                     },
