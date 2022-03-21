@@ -23,6 +23,7 @@ namespace ClassLibrary1
         /// </summary>
         private int _age;
 
+        //TODO:
         /// <summary>
         /// Adult age
         /// </summary>
@@ -144,6 +145,7 @@ namespace ClassLibrary1
 
         }
 
+        //TODO:
         /// <summary>
         /// Get random person 
         /// </summary>

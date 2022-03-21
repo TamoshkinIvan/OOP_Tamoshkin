@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 namespace ClassLibrary1
 {
+    //TODO: XML
     public class Adult : PersonBase
     {
+        //TODO: RSDN
         /// <summary>
         /// PersonBase passport serial number
         /// </summary>
@@ -15,16 +17,19 @@ namespace ClassLibrary1
         /// </summary>
         private string _personJob;
 
+        //TODO: RSDN
         /// <summary>
         /// Maximal passport sn
         /// </summary>
         public const int MaxPassporSN = 100000;
 
+        //TODO: RSDN
         /// <summary>
         /// Minimal passport sn
         /// </summary>
         public const int MinPassporSN = 0;
 
+        //TODO: RSDN
         /// <summary>
         /// Minimal passport ID
         /// </summary>
@@ -137,6 +142,7 @@ namespace ClassLibrary1
             set => _partnerSurname = StringControl(value);
         }
 
+        //TODO в цепочку конструкторов
         /// <summary>
         /// Adult person instance constructor
         /// </summary>
@@ -179,6 +185,7 @@ namespace ClassLibrary1
             FamilyStatus = familyStatus;
             PersonJob = personJob;
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -196,6 +203,7 @@ namespace ClassLibrary1
         {
             return job ?? "Jobless";
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -238,6 +246,7 @@ namespace ClassLibrary1
 
             if (familyStatus[rndMarried] != FamilyStatus.Married)
             {
+                //TODO:
                 return new Adult(rnd.Next(MaxPassporSN), rnd.Next(MaxPassportID),
                     rnd.Next(AdultAge, MaxAge),personGender[rnd.Next(2)], FamilyStatus.Divorced,
                     jobList[rnd.Next(jobList.Length)]);
