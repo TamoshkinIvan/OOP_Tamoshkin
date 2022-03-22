@@ -80,7 +80,6 @@ namespace ClassLibrary1
                 {
                     throw new ArgumentException(("Please enter an age in range" +
                                                  $"between {AdultAge} and {MaxAge}"));
-
                 }
                 _age = value;
             }
@@ -163,9 +162,8 @@ namespace ClassLibrary1
         /// <param name="partnerSurname"></param>
         /// <param name="familyStatus"></param>
         public Adult(int passportSerialNumber, int passportId, string name, string surname, int age,
-            PersonGender gender, FamilyStatus familyStatus, string personJob, string partnerName,
-            string partnerSurname) : this(passportSerialNumber, passportId,name, surname,
-            age, gender, familyStatus, personJob)
+            PersonGender gender, FamilyStatus familyStatus, string personJob, string partnerName, string partnerSurname) 
+            : this(passportSerialNumber, passportId,name, surname, age, gender, familyStatus, personJob)
         {
             PartnerName = partnerName;
             PartnerSurname = partnerSurname;
@@ -233,7 +231,7 @@ namespace ClassLibrary1
            string[] jobList =
                {
                    "Driver", "Teacher", "Hostess", "Flight attendant", "Waiter",
-               "Interpreter", "Entrepreneur", null , "Kremlebot"
+               "Interpreter", "Entrepreneur", null , "KremleBot", "Killer"
 
                };
            var familyStatus = new Dictionary<int, FamilyStatus>()
@@ -250,13 +248,8 @@ namespace ClassLibrary1
             };
 
             int rndSurname = rnd.Next(surnames.Length);
-            int rndAge = rnd.Next(AdultAge, MaxAge);
-
             int rndMarried = rnd.Next(0, 3);
-            int rndJob = rnd.Next(jobList.Length);
-
             PersonGender rndGender =  personGender[rnd.Next(2)];
-
 
             if (familyStatus[rndMarried] != FamilyStatus.Married && rndGender == PersonGender.Male)
             {
@@ -285,5 +278,21 @@ namespace ClassLibrary1
                 rnd.Next(AdultAge, MaxAge), rndGender, familyStatus[rndMarried], jobList[rnd.Next(jobList.Length)],
                 femaleNames[rnd.Next(maleNames.Length)], surnames[rndSurname]);
         }
+
+        protected internal override string GetPersonInfo()
+        {
+            string inf = $"Name: {this.Name};  Surname: {this.Surname};" +
+                         $"\nAge: {this._age} years;  Gender:{this.Gender};" +
+                         $"\nPassport Serial Number: {this._passportSerialNumber}; PassportId: {this._passportId};" +
+                         $"\nFamily Status: {this.FamilyStatus};";
+            if (this.FamilyStatus == FamilyStatus.Married)
+            {
+                inf = $"{inf}" +
+                      $"\nPartner Name: { this._partnerName}; Partner Surname: { this._partnerSurname}; ";
+            }
+            
+            return inf;
+        }
+
     }
 }

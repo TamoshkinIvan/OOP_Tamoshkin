@@ -144,11 +144,8 @@ namespace ClassLibrary1
         ///// Get person info 
         ///// </summary>
         //// <returns></returns>
-        protected internal string GetPersonInfo()
-        {
-            return $"{this._name} {this._surname} {this._age} {this.Gender}";
-        }
-        
+        protected internal abstract string GetPersonInfo();
+
         /// <summary>
         /// Check string language
         /// </summary>
