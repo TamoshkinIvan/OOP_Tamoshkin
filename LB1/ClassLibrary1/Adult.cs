@@ -29,7 +29,7 @@ namespace ClassLibrary1
         /// <summary>
         /// Maximal passport serial number
         /// </summary>
-        public const int MaxPassportSerialNumber = 100000;
+        public const int MaxPassportSerialNumber = 9999;
 
         //TODO: RSDN +
         /// <summary>
@@ -46,7 +46,7 @@ namespace ClassLibrary1
         /// <summary>
         /// Maximum passport ID
         /// </summary>
-        public const int MaxPassportId = 1000000;
+        public const int MaxPassportId = 999999;
 
         /// <summary>
         /// PersonBase passport number
@@ -213,7 +213,7 @@ namespace ClassLibrary1
         /// <returns></returns>
         public static Adult GetRandomPerson()
         {
-           Random rnd = new Random();
+           var rnd = new Random();
        
            string[] maleNames =
                {
@@ -234,22 +234,22 @@ namespace ClassLibrary1
                "Interpreter", "Entrepreneur", null , "KremleBot", "Killer"
 
                };
-           var familyStatus = new Dictionary<int, FamilyStatus>()
-                {
+           var familyStatus = new Dictionary<int, FamilyStatus>
+           {
                      {0, FamilyStatus.Divorced},
                      {1, FamilyStatus.Married},
                      {2, FamilyStatus.Widow},
                      {3, FamilyStatus.Unmarried}
                  };
-            var personGender = new Dictionary<int, PersonGender>()
+            var personGender = new Dictionary<int, PersonGender>
             {
                 {0, PersonGender.Female},
                 {1, PersonGender.Male}
             };
 
-            int rndSurname = rnd.Next(surnames.Length);
-            int rndMarried = rnd.Next(0, 3);
-            PersonGender rndGender =  personGender[rnd.Next(2)];
+            var rndSurname = rnd.Next(surnames.Length);
+            var rndMarried = rnd.Next(0, 3);
+            var rndGender =  personGender[rnd.Next(2)];
 
             if (familyStatus[rndMarried] != FamilyStatus.Married && rndGender == PersonGender.Male)
             {
@@ -278,21 +278,22 @@ namespace ClassLibrary1
                 rnd.Next(AdultAge, MaxAge), rndGender, familyStatus[rndMarried], jobList[rnd.Next(jobList.Length)],
                 femaleNames[rnd.Next(maleNames.Length)], surnames[rndSurname]);
         }
-
+        /// <summary>
+        /// Get information about an adult person
+        /// </summary>
+        /// <returns></returns>
         protected internal override string GetPersonInfo()
         {
-            string inf = $"Name: {this.Name};  Surname: {this.Surname};" +
-                         $"\nAge: {this._age} years;  Gender:{this.Gender};" +
-                         $"\nPassport Serial Number: {this._passportSerialNumber}; PassportId: {this._passportId};" +
-                         $"\nFamily Status: {this.FamilyStatus};";
-            if (this.FamilyStatus == FamilyStatus.Married)
+            var inf = $"Name: {Name};  Surname: {Surname};" +
+                      $"\nAge: {_age} years;  Gender: {Gender};" +
+                      $"\nPassport Serial Number: {_passportSerialNumber}; PassportId: {_passportId};" +
+                      $"\nFamily Status: {FamilyStatus};";
+            if (FamilyStatus == FamilyStatus.Married)
             {
                 inf = $"{inf}" +
-                      $"\nPartner Name: { this._partnerName}; Partner Surname: { this._partnerSurname}; ";
+                      $"\nPartner Name: { _partnerName}; Partner Surname: { _partnerSurname}; ";
             }
-            
             return inf;
         }
-
     }
 }
