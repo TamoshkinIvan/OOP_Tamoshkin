@@ -83,6 +83,7 @@ namespace ClassLibrary1
         protected PersonBase( int age, PersonGender gender)
         {
             Age = age;
+            //TODO:
             _age = age;
             Gender = gender;
         }

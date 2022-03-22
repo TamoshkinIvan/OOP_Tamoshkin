@@ -83,7 +83,7 @@ namespace LB1
         /// <returns>Instance person</returns>
         private static PersonBase ReadPerson()
         {
-            /// Тут добавить swich case для выбора взрослого, либо ребенка
+            // Тут добавить switch case для выбора взрослого, либо ребенка
             var defaultPerson = new Adult();
             var actionsTupleList = new List<(Action Action, string Message)>
             {

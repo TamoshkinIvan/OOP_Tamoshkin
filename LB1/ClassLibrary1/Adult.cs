@@ -3,13 +3,11 @@ using System.Collections.Generic;
 
 namespace ClassLibrary1
 {
-    //TODO: XML (+)
     /// <summary>
     /// Class adult
     /// </summary>
     public class Adult : PersonBase
     {
-        //TODO: RSDN +
         /// <summary>
         /// PersonBase passport serial number
         /// </summary>
@@ -24,20 +22,17 @@ namespace ClassLibrary1
         /// PersonBase job
         /// </summary>
         private string _personJob;
-
-        //TODO: RSDN +
+        
         /// <summary>
         /// Maximal passport serial number
         /// </summary>
         public const int MaxPassportSerialNumber = 9999;
-
-        //TODO: RSDN +
+        
         /// <summary>
         /// Minimal passport serial number
         /// </summary>
         public const int MinPassportSerialNumber = 0;
-
-        //TODO: RSDN +
+        
         /// <summary>
         /// Minimal passport Id
         /// </summary>
@@ -148,8 +143,8 @@ namespace ClassLibrary1
             get => _partnerSurname;
             set => _partnerSurname = StringControl(value);
         }
-
-        //TODO в цепочку конструкторов
+        
+        //TODO: XML
         /// <summary>
         /// Adult person instance constructor
         /// </summary>
@@ -161,9 +156,13 @@ namespace ClassLibrary1
         /// <param name="partnerName"></param>
         /// <param name="partnerSurname"></param>
         /// <param name="familyStatus"></param>
-        public Adult(int passportSerialNumber, int passportId, string name, string surname, int age,
-            PersonGender gender, FamilyStatus familyStatus, string personJob, string partnerName, string partnerSurname) 
-            : this(passportSerialNumber, passportId,name, surname, age, gender, familyStatus, personJob)
+        public Adult(int passportSerialNumber, 
+            int passportId, string name, 
+            string surname, int age,
+            PersonGender gender, FamilyStatus familyStatus, 
+            string personJob, string partnerName, string partnerSurname) 
+            : this(passportSerialNumber, passportId,name, 
+                surname, age, gender, familyStatus, personJob)
         {
             PartnerName = partnerName;
             PartnerSurname = partnerSurname;
@@ -247,13 +246,13 @@ namespace ClassLibrary1
                 {1, PersonGender.Male}
             };
 
+            //TODO:
             var rndSurname = rnd.Next(surnames.Length);
             var rndMarried = rnd.Next(0, 3);
             var rndGender =  personGender[rnd.Next(2)];
 
             if (familyStatus[rndMarried] != FamilyStatus.Married && rndGender == PersonGender.Male)
             {
-                //TODO: +
                 return new Adult(rnd.Next(MaxPassportSerialNumber), rnd.Next(MaxPassportId),
                      maleNames[rnd.Next(maleNames.Length)], surnames[rndSurname],
                      rnd.Next(AdultAge, MaxAge), rndGender, familyStatus[rndMarried], jobList[rnd.Next(jobList.Length)]);
