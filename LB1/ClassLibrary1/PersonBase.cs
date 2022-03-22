@@ -23,12 +23,6 @@ namespace ClassLibrary1
         /// </summary>
         private int _age;
 
-        //TODO:
-        /// <summary>
-        /// Adult age
-        /// </summary>
-        public const int  AdultAge = 18;
-
         /// <summary>
         /// Max person age
         /// </summary>
@@ -73,11 +67,12 @@ namespace ClassLibrary1
         /// <param name="gender">PersonBase gender</param>
         /// <param name="name">PersonBase name</param>
         /// <param name="surname">PersonBase surname</param>
-        protected PersonBase( string name, string surname, PersonGender gender)
+        protected PersonBase( string name, string surname, PersonGender gender, int age)
         {
             Name = name;
             Surname = surname;
             Gender = gender;
+            Age = age;
         }
 
         /// <summary>
@@ -144,41 +139,6 @@ namespace ClassLibrary1
             return checkString;
 
         }
-
-        //TODO:
-        /// <summary>
-        /// Get random person 
-        /// </summary>
-        /// <returns></returns>
-        //public abstract PersonBase GetRandomPerson();
-        //{
-        //    Random rnd = new Random();
-        //    
-        //    string[] names =
-        //    {
-        //        "Alex", "Joe", "Ashley",
-        //        "Casey", "Jordan", "Taylor"
-        //    };
-        //    
-        //    string[] surnames =
-        //    {
-        //        "Jones", "Tramp", "Phillips",
-        //        "Kill", "Black", "Freeman"
-        //    };
-        //
-        //    int rndAge = rnd.Next(MaxAge);
-        //    int rndGender = rnd.Next(names.Length);
-        //
-        //    //if (rndGender % 2 == 0)
-        //    //{
-        //    //    return new Adult(names[rnd.Next(names.Length)],
-        //    //        surnames[rnd.Next(surnames.Length)], rndAge, PersonGender.Male, FamilyStatus.Divorced);
-        //    ///}
-        //    //
-        //    //return new Adult(names[rnd.Next(names.Length)],
-        //    //    surnames[rnd.Next(surnames.Length)], rndAge, PersonGender.Female, FamilyStatus.Divorced);
-        //
-        //}
         
         ///// <summary>
         ///// Get person info 

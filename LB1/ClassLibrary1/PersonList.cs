@@ -4,7 +4,7 @@ using System.Linq;
 namespace ClassLibrary1
 {
     /// <summary>
-    /// Class personBase list
+    /// Class person list
     /// </summary>
     public class PersonList
     {
@@ -36,7 +36,6 @@ namespace ClassLibrary1
                 Array.Resize(ref _persons, lengthArray - 1);
             }
         }
-
         /// <summary>
         /// Get personBase by index
         /// </summary>
@@ -80,12 +79,11 @@ namespace ClassLibrary1
         /// <returns></returns>
         public string Info()
         {
-            string strInfo = "";
+            var strInfo = "";
             foreach (PersonBase person in _persons)
             {
                 strInfo += "\n" + person.GetPersonInfo();
             }
-
             return strInfo;
         }
     }

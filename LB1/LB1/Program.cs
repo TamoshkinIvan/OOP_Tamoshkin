@@ -27,19 +27,10 @@ namespace LB1
 
             personList2.DeleteLastPerson();
 
-            try
-            {
-                var person1 = new Adult (12, 23, 26, PersonGender.Female, FamilyStatus.Married, null);
-                personList1.AddPerson(person1);
-            }
-            catch (AggregateException e)
-            {
-                Console.WriteLine(e.Message);
-            }
 
-            //var person = PersonBase.GetRandomPerson();
+            var person = Adult.GetRandomPerson();
 
-            //personList1.AddPerson(person);
+            personList1.AddPerson(person);
 
             try
             {

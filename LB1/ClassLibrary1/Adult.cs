@@ -3,47 +3,55 @@ using System.Collections.Generic;
 
 namespace ClassLibrary1
 {
-    //TODO: XML
+    //TODO: XML (+)
+    /// <summary>
+    /// Class adult
+    /// </summary>
     public class Adult : PersonBase
     {
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
         /// PersonBase passport serial number
         /// </summary>
-        private int _passportSN;
+        private int _passportSerialNumber;
+
+        /// <summary>
+        /// Adult age
+        /// </summary>
+        public const int AdultAge = 18;
 
         /// <summary>
         /// PersonBase job
         /// </summary>
         private string _personJob;
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
-        /// Maximal passport sn
+        /// Maximal passport serial number
         /// </summary>
-        public const int MaxPassporSN = 100000;
+        public const int MaxPassportSerialNumber = 100000;
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
-        /// Minimal passport sn
+        /// Minimal passport serial number
         /// </summary>
-        public const int MinPassporSN = 0;
+        public const int MinPassportSerialNumber = 0;
 
-        //TODO: RSDN
+        //TODO: RSDN +
         /// <summary>
-        /// Minimal passport ID
+        /// Minimal passport Id
         /// </summary>
-        public const int MinPassportID = 0;
+        public const int MinPassportId = 0;
 
         /// <summary>
         /// Maximum passport ID
         /// </summary>
-        public const int MaxPassportID = 1000000;
+        public const int MaxPassportId = 1000000;
 
         /// <summary>
         /// PersonBase passport number
         /// </summary>
-        private int _passportID;
+        private int _passportId;
 
         /// <summary>
         /// PersonBase partner name
@@ -97,15 +105,15 @@ namespace ClassLibrary1
         /// </summary>
         public int PassportSerialNumber
         {
-            get => _passportSN;
+            get => _passportSerialNumber;
             set
             {
-                if (value < MinPassporSN || value > MaxPassporSN)
+                if (value < MinPassportSerialNumber || value > MaxPassportSerialNumber)
                 {
                     throw new ArgumentException("Please enter passport SN in range" +
-                                                $"between {MinPassporSN} and {MaxPassporSN}");
+                                                $"between {MinPassportSerialNumber} and {MaxPassportSerialNumber}");
                 }
-                _passportSN = value;
+                _passportSerialNumber = value;
             }
         }
 
@@ -114,15 +122,15 @@ namespace ClassLibrary1
         /// </summary>
         public int PassportID 
         { 
-            get => _passportID; 
+            get => _passportId; 
             set
             {
-                if (value < MinPassportID || value >= MaxPassportID)
+                if (value < MinPassportId || value >= MaxPassportId)
                 {
                     throw new ArgumentException("Please enter passport ID in range" +
-                                                $"between {MinPassportID} and {MaxPassportID}");
+                                                $"between {MinPassportId} and {MaxPassportId}");
                 }
-                _passportID = value;
+                _passportId = value;
             }
         }
         /// <summary>
@@ -146,42 +154,40 @@ namespace ClassLibrary1
         /// <summary>
         /// Adult person instance constructor
         /// </summary>
-        /// <param name="passportSerialNumber"></param>
-        /// <param name="passportID"></param>
-        /// <param name="name"></param>
-        /// <param name="surname"></param>
+        /// <param name="passportSerialNumber"></param
+        /// <param name="passportId"></param>
         /// <param name="age"></param>
         /// <param name="gender"></param>
         /// <param name="personJob"></param>
         /// <param name="partnerName"></param>
         /// <param name="partnerSurname"></param>
         /// <param name="familyStatus"></param>
-        public Adult(int passportSerialNumber, int passportID, string name,
-            string surname, int age, PersonGender gender, FamilyStatus familyStatus, string personJob, 
-            string partnerName, string partnerSurname) : base(name, surname, gender)
+        public Adult(int passportSerialNumber, int passportId, string name, string surname, int age,
+            PersonGender gender, FamilyStatus familyStatus, string personJob, string partnerName,
+            string partnerSurname) : this(passportSerialNumber, passportId,name, surname,
+            age, gender, familyStatus, personJob)
         {
-            PassportSerialNumber = passportSerialNumber;
-            PassportID = passportID;
             PartnerName = partnerName;
             PartnerSurname = partnerSurname;
-            FamilyStatus = familyStatus;
-            PersonJob = personJob;
-            Age = age;
         }
+
         /// <summary>
         /// Instance for console input
         /// </summary>
         /// <param name="passportSerialNumber"></param>
-        /// <param name="passportID"></param>
+        /// <param name="passportId"></param>
+        /// <param name="name"></param>
+        /// <param name="surname"></param>
         /// <param name="age"></param>
         /// <param name="gender"></param>
         /// <param name="familyStatus"></param>
         /// <param name="personJob"></param>
-        public Adult(int passportSerialNumber, int passportID, int age, PersonGender gender,
-            FamilyStatus familyStatus, string personJob) : base(age, gender)
+        public Adult(int passportSerialNumber, int passportId, string name,string surname ,
+            int age, PersonGender gender, FamilyStatus familyStatus, string personJob) 
+            : base(name, surname, gender,age)
         {
             PassportSerialNumber = passportSerialNumber;
-            PassportID = passportID;
+            PassportID = passportId;
             FamilyStatus = familyStatus;
             PersonJob = personJob;
         }
@@ -189,9 +195,8 @@ namespace ClassLibrary1
         /// <summary>
         /// 
         /// </summary>
-        public Adult() : this(100, 120, "Boris", "Jonson",
-            120, PersonGender.Female, FamilyStatus.Unmarried, null, "Alisa",
-            "Petrol" )
+        public Adult() : this(666, 666, "John",
+            "Wick", 35, PersonGender.Female, FamilyStatus.Widow, "Killer")
         {}
 
         /// <summary>
@@ -205,7 +210,7 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// 
+        /// Get random person
         /// </summary>
         /// <returns></returns>
         public static Adult GetRandomPerson()
@@ -213,29 +218,38 @@ namespace ClassLibrary1
            Random rnd = new Random();
        
            string[] maleNames =
-               { "Alex", "John", "Nikolas", "Pit"};
+               {
+                   "Alex", "John", "Nikolas", "Pit"
+               };
            string[] femaleNames =
-               {"Maria", "Rosa", "Kasandra", "Germiona"};
+               {
+                   "Maria", "Rosa", "Kasandra", "Germiona"
+               };
+           string[] surnames =
+               {
+                   "Jones", "Tramp", "Phillips",
+                   "Kill", "Black", "Freeman"
+               };
            string[] jobList =
-           {"Driver", "Teacher", "Hostess", "Flight attendant", "Waiter",
-               "Interpreter", "Entrepreneur", null};
+               {
+                   "Driver", "Teacher", "Hostess", "Flight attendant", "Waiter",
+               "Interpreter", "Entrepreneur", null , "Kremlebot"
 
-
-            var familyStatus = new Dictionary<int, FamilyStatus>()
-           {
-                {0, FamilyStatus.Divorced},
-                {1, FamilyStatus.Married},
-                {2, FamilyStatus.Widow},
-                {3, FamilyStatus.Unmarried}
-            };
+               };
+           var familyStatus = new Dictionary<int, FamilyStatus>()
+                {
+                     {0, FamilyStatus.Divorced},
+                     {1, FamilyStatus.Married},
+                     {2, FamilyStatus.Widow},
+                     {3, FamilyStatus.Unmarried}
+                 };
             var personGender = new Dictionary<int, PersonGender>()
             {
                 {0, PersonGender.Female},
-                {1, PersonGender.Male},
-                {2, PersonGender.Unknown}
+                {1, PersonGender.Male}
             };
 
-            int rndName = rnd.Next(maleNames.Length);
+            int rndSurname = rnd.Next(surnames.Length);
             int rndAge = rnd.Next(AdultAge, MaxAge);
 
             int rndMarried = rnd.Next(0, 3);
@@ -244,15 +258,32 @@ namespace ClassLibrary1
             PersonGender rndGender =  personGender[rnd.Next(2)];
 
 
-            if (familyStatus[rndMarried] != FamilyStatus.Married)
+            if (familyStatus[rndMarried] != FamilyStatus.Married && rndGender == PersonGender.Male)
             {
-                //TODO:
-                return new Adult(rnd.Next(MaxPassporSN), rnd.Next(MaxPassportID),
-                    rnd.Next(AdultAge, MaxAge),personGender[rnd.Next(2)], FamilyStatus.Divorced,
-                    jobList[rnd.Next(jobList.Length)]);
+                //TODO: +
+                return new Adult(rnd.Next(MaxPassportSerialNumber), rnd.Next(MaxPassportId),
+                     maleNames[rnd.Next(maleNames.Length)], surnames[rndSurname],
+                     rnd.Next(AdultAge, MaxAge), rndGender, familyStatus[rndMarried], jobList[rnd.Next(jobList.Length)]);
             }
 
-        }
+            if (familyStatus[rndMarried] != FamilyStatus.Married && rndGender == PersonGender.Female)
+            {
+                return new Adult(rnd.Next(MaxPassportSerialNumber), rnd.Next(MaxPassportId),
+                    femaleNames[rnd.Next(maleNames.Length)], surnames[rndSurname],
+                    rnd.Next(AdultAge, MaxAge), rndGender, familyStatus[rndMarried], jobList[rnd.Next(jobList.Length)]);
+            }
 
+            if (rndGender == PersonGender.Female )
+            {
+                return new Adult(rnd.Next(MaxPassportSerialNumber), rnd.Next(MaxPassportId),
+                    femaleNames[rnd.Next(maleNames.Length)], surnames[rndSurname],
+                    rnd.Next(AdultAge, MaxAge), rndGender, familyStatus[rndMarried], jobList[rnd.Next(jobList.Length)],
+                    maleNames[rnd.Next(maleNames.Length)], surnames[rndSurname]);
+            }
+            return new Adult(rnd.Next(MaxPassportSerialNumber), rnd.Next(MaxPassportId),
+                maleNames[rnd.Next(maleNames.Length)], surnames[rndSurname],
+                rnd.Next(AdultAge, MaxAge), rndGender, familyStatus[rndMarried], jobList[rnd.Next(jobList.Length)],
+                femaleNames[rnd.Next(maleNames.Length)], surnames[rndSurname]);
+        }
     }
 }
