@@ -229,6 +229,12 @@ namespace ClassLibrary1
             return GetAdult(getFamilyStatus, rndGender);
         }
 
+        /// <summary>
+        /// Get Adult person
+        /// </summary>
+        /// <param name="familyStatus"></param>
+        /// <param name="gender"></param>
+        /// <returns></returns>
         public static Adult GetAdult(FamilyStatus familyStatus, int gender)
         {
             var rnd = new Random();
