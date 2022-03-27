@@ -143,19 +143,21 @@ namespace ClassLibrary1
             get => _partnerSurname;
             set => _partnerSurname = StringControl(value);
         }
-        
-        //TODO: XML
+
+        //TODO: XML +
         /// <summary>
         /// Adult person instance constructor
         /// </summary>
-        /// <param name="passportSerialNumber"></param
+        /// <param name="passportSerialNumber"></param>
         /// <param name="passportId"></param>
+        /// <param name="name"></param>
+        /// <param name="surname"></param>
         /// <param name="age"></param>
         /// <param name="gender"></param>
+        /// <param name="familyStatus"></param>
         /// <param name="personJob"></param>
         /// <param name="partnerName"></param>
         /// <param name="partnerSurname"></param>
-        /// <param name="familyStatus"></param>
         public Adult(int passportSerialNumber, 
             int passportId, string name, 
             string surname, int age,
@@ -213,26 +215,7 @@ namespace ClassLibrary1
         public static Adult GetRandomPerson()
         {
            var rnd = new Random();
-       
-           string[] maleNames =
-               {
-                   "Alex", "John", "Nikolas", "Pit"
-               };
-           string[] femaleNames =
-               {
-                   "Maria", "Rosa", "Kasandra", "Germiona"
-               };
-           string[] surnames =
-               {
-                   "Jones", "Tramp", "Phillips",
-                   "Kill", "Black", "Freeman"
-               };
-           string[] jobList =
-               {
-                   "Driver", "Teacher", "Hostess", "Flight attendant", "Waiter",
-               "Interpreter", "Entrepreneur", null , "KremleBot", "Killer"
 
-               };
            var familyStatus = new Dictionary<int, FamilyStatus>
            {
                      {0, FamilyStatus.Divorced},
@@ -240,43 +223,61 @@ namespace ClassLibrary1
                      {2, FamilyStatus.Widow},
                      {3, FamilyStatus.Unmarried}
                  };
-            var personGender = new Dictionary<int, PersonGender>
+
+            var getFamilyStatus = familyStatus[rnd.Next(3)];
+            var rndGender = rnd.Next(1);
+            return GetAdult(getFamilyStatus, rndGender);
+        }
+
+        public static Adult GetAdult(FamilyStatus familyStatus, int gender)
+        {
+            var rnd = new Random();
+            var names = new Dictionary<int, List<string>>()
+            {
+                {
+                    1, new List<string> {"Alex", "John", "Nikolas", "Piter"}
+
+                },
+                {
+                    0, new List<string> { "Maria", "Rosa", "Kasandra", "Germiona" }
+
+                }
+            };
+            string[] surnames =
+            {
+                "Jones", "Tramp", "Phillips",
+                "Kill", "Black", "Freeman"
+            };
+            string[] jobList =
+            {
+                "Driver", "Teacher", "Hostess", "Flight attendant", "Waiter",
+                "Interpreter", "Entrepreneur", null , "KremleBot", "Killer"
+            };
+            var genderDictionary = new Dictionary<int, PersonGender>
             {
                 {0, PersonGender.Female},
                 {1, PersonGender.Male}
             };
 
-            //TODO:
-            var rndSurname = rnd.Next(surnames.Length);
-            var rndMarried = rnd.Next(0, 3);
-            var rndGender =  personGender[rnd.Next(2)];
+            //TODO: +
+            var rndSurname = surnames[rnd.Next(surnames.Length)];
+            var rndJob = jobList[rnd.Next(jobList.Length)];
+            var name = names[gender][rnd.Next(names[gender].Count)];
+            var partnerName = names[Math.Abs(gender - 1)][rnd.Next(names[Math.Abs(gender - 1)].Count)];
+            var personGender = genderDictionary[gender];
+            var passportSerialNumber = rnd.Next(MaxPassportSerialNumber);
+            var passportId = rnd.Next(MaxPassportId);
 
-            if (familyStatus[rndMarried] != FamilyStatus.Married && rndGender == PersonGender.Male)
+            if (familyStatus != FamilyStatus.Married)
             {
-                return new Adult(rnd.Next(MaxPassportSerialNumber), rnd.Next(MaxPassportId),
-                     maleNames[rnd.Next(maleNames.Length)], surnames[rndSurname],
-                     rnd.Next(AdultAge, MaxAge), rndGender, familyStatus[rndMarried], jobList[rnd.Next(jobList.Length)]);
+                return new Adult(passportSerialNumber, passportId, name, rndSurname,
+                    rnd.Next(AdultAge, MaxAge), personGender, familyStatus, rndJob);
             }
+            return new Adult(passportSerialNumber, passportId, name, rndSurname, rnd.Next(AdultAge, MaxAge),
+                personGender, familyStatus, rndJob, partnerName, rndSurname);
 
-            if (familyStatus[rndMarried] != FamilyStatus.Married && rndGender == PersonGender.Female)
-            {
-                return new Adult(rnd.Next(MaxPassportSerialNumber), rnd.Next(MaxPassportId),
-                    femaleNames[rnd.Next(maleNames.Length)], surnames[rndSurname],
-                    rnd.Next(AdultAge, MaxAge), rndGender, familyStatus[rndMarried], jobList[rnd.Next(jobList.Length)]);
-            }
-
-            if (rndGender == PersonGender.Female )
-            {
-                return new Adult(rnd.Next(MaxPassportSerialNumber), rnd.Next(MaxPassportId),
-                    femaleNames[rnd.Next(maleNames.Length)], surnames[rndSurname],
-                    rnd.Next(AdultAge, MaxAge), rndGender, familyStatus[rndMarried], jobList[rnd.Next(jobList.Length)],
-                    maleNames[rnd.Next(maleNames.Length)], surnames[rndSurname]);
-            }
-            return new Adult(rnd.Next(MaxPassportSerialNumber), rnd.Next(MaxPassportId),
-                maleNames[rnd.Next(maleNames.Length)], surnames[rndSurname],
-                rnd.Next(AdultAge, MaxAge), rndGender, familyStatus[rndMarried], jobList[rnd.Next(jobList.Length)],
-                femaleNames[rnd.Next(maleNames.Length)], surnames[rndSurname]);
         }
+
         /// <summary>
         /// Get information about an adult person
         /// </summary>
