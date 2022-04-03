@@ -86,5 +86,10 @@ namespace ClassLibrary1
             }
             return strInfo;
         }
+
+        public void AddPerson((Action Action, string Message) createPerson)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

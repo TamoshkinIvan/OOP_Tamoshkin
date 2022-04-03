@@ -212,10 +212,8 @@ namespace ClassLibrary1
         /// Get random person
         /// </summary>
         /// <returns></returns>
-        public static Adult GetRandomPerson()
+        public static Adult GetRandomPerson(Random rnd)
         {
-           var rnd = new Random();
-
            var familyStatus = new Dictionary<int, FamilyStatus>
            {
                      {0, FamilyStatus.Divorced},
@@ -290,7 +288,7 @@ namespace ClassLibrary1
         /// <returns></returns>
         protected internal override string GetPersonInfo()
         {
-            var inf = $"Name: {Name};  Surname: {Surname};" +
+            var inf = $"\nName: {Name};  Surname: {Surname};" +
                       $"\nAge: {_age} years;  Gender: {Gender}; Job: {PersonJob}" +
                       $"\nPassport Serial Number: {_passportSerialNumber}; PassportId: {_passportId};" +
                       $"\nFamily Status: {FamilyStatus};";
@@ -298,7 +296,7 @@ namespace ClassLibrary1
             {
                 inf = $"{inf}" +
                       $"\nPartner Name: { _partnerName}; Partner Surname: { _partnerSurname}; " +
-                      $"\n";
+                      "\n";
             }
             return inf;
         }

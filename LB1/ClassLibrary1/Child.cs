@@ -103,27 +103,18 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// Default constructor 
-        /// </summary>
-        public Child() : this("Wiily", "Black", 13, PersonGender.Male,
-            null, null, "Boston Kinder Garden") {}
-
-        /// <summary>
         /// Get child 
         /// </summary>
         /// <returns></returns>
-        public static Child GetRandomPerson()
+        public static Child GetRandomPerson(Random rnd)
         {
-            var rnd = new Random();
             var names = new Dictionary<int, List<string>>()
             {
                 {
                     1, new List<string> {"Alphonso", "Giovanni", "Buratino", "Hussein" }
-
                 },
                 {
                     0, new List<string> { "Maria", "Rosa", "Kassandra", "Hermione" }
-
                 }
             };
             string[] surnames =
@@ -143,7 +134,7 @@ namespace ClassLibrary1
             var rndMaleNames = names[1][rnd.Next(names[1].Count)];
             var rndFemaleNames = names[0][rnd.Next(names[0].Count)];
             var rndGender = rnd.Next(1);
-            var rndParent = rnd.Next(3);
+            var rndParent = rnd.Next(2);
             var name = names[rndGender][rnd.Next(names[rndGender].Count)];
             var rndSurname = surnames[rnd.Next(surnames.Length)];
             var childGender = genderDictionary[rndGender];
@@ -175,7 +166,7 @@ namespace ClassLibrary1
         /// <returns></returns>
         protected internal override string GetPersonInfo()
         {
-            var info = $"Name: {Name}; Surname: {Surname};" +
+            var info = $"\nName: {Name}; Surname: {Surname};" +
                        $"\nAge: {Age}; Gender: {Gender}; ";
             if (MotherName != null)
             {
