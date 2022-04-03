@@ -192,7 +192,7 @@ namespace ClassLibrary1
         }
 
         /// <summary>
-        /// 
+        /// Default constructor
         /// </summary>
         public Adult() : this(666, 666, "John",
             "Wick", 35, PersonGender.Female, FamilyStatus.Widow, "Killer")
@@ -276,8 +276,8 @@ namespace ClassLibrary1
 
             if (familyStatus != FamilyStatus.Married)
             {
-                return new Adult(passportSerialNumber, passportId, name, rndSurname,
-                    rnd.Next(AdultAge, MaxAge), personGender, familyStatus, rndJob);
+                return new Adult(passportSerialNumber, passportId, name, rndSurname,rnd.Next(AdultAge, MaxAge),
+                    personGender, familyStatus, rndJob);
             }
             return new Adult(passportSerialNumber, passportId, name, rndSurname, rnd.Next(AdultAge, MaxAge),
                 personGender, familyStatus, rndJob, partnerName, rndSurname);
@@ -291,13 +291,14 @@ namespace ClassLibrary1
         protected internal override string GetPersonInfo()
         {
             var inf = $"Name: {Name};  Surname: {Surname};" +
-                      $"\nAge: {_age} years;  Gender: {Gender};" +
+                      $"\nAge: {_age} years;  Gender: {Gender}; Job: {PersonJob}" +
                       $"\nPassport Serial Number: {_passportSerialNumber}; PassportId: {_passportId};" +
                       $"\nFamily Status: {FamilyStatus};";
             if (FamilyStatus == FamilyStatus.Married)
             {
                 inf = $"{inf}" +
-                      $"\nPartner Name: { _partnerName}; Partner Surname: { _partnerSurname}; ";
+                      $"\nPartner Name: { _partnerName}; Partner Surname: { _partnerSurname}; " +
+                      $"\n";
             }
             return inf;
         }

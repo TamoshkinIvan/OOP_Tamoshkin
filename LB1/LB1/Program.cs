@@ -28,9 +28,13 @@ namespace LB1
             personList2.DeleteLastPerson();
 
 
-            var person = Adult.GetRandomPerson();
+            var person1 = Adult.GetRandomPerson();
 
-            personList1.AddPerson(person);
+            personList1.AddPerson(person1);
+
+            var person2 = Child.GetRandomPerson();
+
+            personList1.AddPerson(person2);
 
 
             try
