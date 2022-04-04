@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 namespace ClassLibrary1
 {
-    //TODO:+
     /// <summary>
     /// Class child 
     /// </summary>
@@ -141,19 +140,22 @@ namespace ClassLibrary1
             var kinderGardenName = kinderGardenList[rnd.Next(kinderGardenList.Length)];
             string motherName = null;
             string fatherName = null;
-
-            if (rndParent == 0)
+            //TODO:
+            switch (rndParent)
             {
-                fatherName = rndMaleNames;
-            }
-            else if (rndParent == 1)
-            {
-                motherName = rndFemaleNames;
-            }
-            else if (rndParent == 2)
-            {
-                motherName = rndFemaleNames;
-                fatherName = rndMaleNames;
+                //
+                case 0:
+                    fatherName = rndMaleNames;
+                    break;
+                //
+                case 1:
+                    motherName = rndFemaleNames;
+                    break;
+                //
+                case 2:
+                    motherName = rndFemaleNames;
+                    fatherName = rndMaleNames;
+                    break;
             }
 
             return new Child(name, rndSurname, rnd.Next(MinAge, ChildAge), childGender,

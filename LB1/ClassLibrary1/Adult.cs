@@ -104,6 +104,7 @@ namespace ClassLibrary1
             {
                 if (value < MinPassportSerialNumber || value > MaxPassportSerialNumber)
                 {
+                    //TODO: RSDN
                     throw new ArgumentException("Please enter passport SN in range" +
                                                 $"between {MinPassportSerialNumber} and {MaxPassportSerialNumber}");
                 }
@@ -144,7 +145,7 @@ namespace ClassLibrary1
             set => _partnerSurname = StringControl(value);
         }
 
-        //TODO: XML +
+        //TODO: XML
         /// <summary>
         /// Adult person instance constructor
         /// </summary>
@@ -263,15 +264,17 @@ namespace ClassLibrary1
                 {1, PersonGender.Male}
             };
 
-            //TODO: +
+            //TODO: RSDN
             var rndSurname = surnames[rnd.Next(surnames.Length)];
             var rndJob = jobList[rnd.Next(jobList.Length)];
             var name = names[gender][rnd.Next(names[gender].Count)];
+
             var partnerName = names[Math.Abs(gender - 1)][rnd.Next(names[Math.Abs(gender - 1)].Count)];
             var personGender = genderDictionary[gender];
             var passportSerialNumber = rnd.Next(MaxPassportSerialNumber);
             var passportId = rnd.Next(MaxPassportId);
 
+            //TODO: RSDN
             if (familyStatus != FamilyStatus.Married)
             {
                 return new Adult(passportSerialNumber, passportId, name, rndSurname,rnd.Next(AdultAge, MaxAge),

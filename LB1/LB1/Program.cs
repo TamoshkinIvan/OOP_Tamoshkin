@@ -47,6 +47,7 @@ namespace LB1
             Console.WriteLine(personList.Info());
             Console.WriteLine("\n////////////\n");
         }
+
         /// <summary>
         /// Create random person list
         /// </summary>
@@ -54,7 +55,6 @@ namespace LB1
         /// <returns></returns>
         private static PersonList CreateList(Random rnd)
         {
-            
             var personList1 = new PersonList();
             for (var i = 0; i <= 7; i++)
             {
