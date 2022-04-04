@@ -300,5 +300,13 @@ namespace ClassLibrary1
             }
             return inf;
         }
+
+        /// <summary>
+        /// Adult method
+        /// </summary>
+        public void GetOlder()
+        {
+            Console.WriteLine("Take a loan");
+        }
     }
 }

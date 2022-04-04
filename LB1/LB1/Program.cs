@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using ClassLibrary1;
 
 
@@ -22,6 +21,19 @@ namespace LB1
             var rnd = new Random();
             var personList1 = CreateList(rnd);
             PrintPersonList(personList1);
+
+            var person = personList1.SearchByIndex(3);
+
+            switch (person)
+            {
+                case Adult adult:
+                    adult.GetOlder();
+                    break;
+                case Child child:
+                    child.GetYounger();
+                    break;
+            }
+
             Console.ReadKey();
         }
         
@@ -46,7 +58,7 @@ namespace LB1
             var personList1 = new PersonList();
             for (var i = 0; i <= 7; i++)
             {
-                if (rnd.Next(1) == 1)
+                if (rnd.Next(2) == 1)
                 {
                     personList1.AddPerson(Adult.GetRandomPerson(rnd));
                 }

@@ -181,5 +181,13 @@ namespace ClassLibrary1
             return info;
         }
 
+        /// <summary>
+        /// Child method
+        /// </summary>
+        public void GetYounger()
+        {
+            Console.WriteLine("Get vape.");
+        }
+
     }
 }
