@@ -104,9 +104,11 @@ namespace ClassLibrary1
             {
                 if (value < MinPassportSerialNumber || value > MaxPassportSerialNumber)
                 {
-                    //TODO: RSDN
-                    throw new ArgumentException("Please enter passport SN in range" +
-                                                $"between {MinPassportSerialNumber} and {MaxPassportSerialNumber}");
+                    //TODO: RSDN+
+                    throw new ArgumentException(
+                        "Please enter passport SN in range" +
+                        $"between {MinPassportSerialNumber} and {MaxPassportSerialNumber}"
+                        );
                 }
                 _passportSerialNumber = value;
             }
@@ -145,20 +147,20 @@ namespace ClassLibrary1
             set => _partnerSurname = StringControl(value);
         }
 
-        //TODO: XML
+        //TODO: XML +
         /// <summary>
         /// Adult person instance constructor
         /// </summary>
-        /// <param name="passportSerialNumber"></param>
-        /// <param name="passportId"></param>
-        /// <param name="name"></param>
-        /// <param name="surname"></param>
-        /// <param name="age"></param>
-        /// <param name="gender"></param>
-        /// <param name="familyStatus"></param>
-        /// <param name="personJob"></param>
-        /// <param name="partnerName"></param>
-        /// <param name="partnerSurname"></param>
+        /// <param name="passportSerialNumber">Person passport serial number</param>
+        /// <param name="passportId">Person passport id</param>
+        /// <param name="name">Person name</param>
+        /// <param name="surname">Person surname</param>
+        /// <param name="age">Person age</param>
+        /// <param name="gender">Person gender</param>
+        /// <param name="familyStatus">Person family status</param>
+        /// <param name="personJob">person job</param>
+        /// <param name="partnerName">Person partner name</param>
+        /// <param name="partnerSurname">Person partner surname</param>
         public Adult(int passportSerialNumber, 
             int passportId, string name, 
             string surname, int age,
@@ -264,24 +266,33 @@ namespace ClassLibrary1
                 {1, PersonGender.Male}
             };
 
-            //TODO: RSDN
+            
             var rndSurname = surnames[rnd.Next(surnames.Length)];
             var rndJob = jobList[rnd.Next(jobList.Length)];
             var name = names[gender][rnd.Next(names[gender].Count)];
-
-            var partnerName = names[Math.Abs(gender - 1)][rnd.Next(names[Math.Abs(gender - 1)].Count)];
+            var genderAbs = Math.Abs(gender - 1);
+            var partnerName = names[genderAbs][rnd.Next(names[genderAbs].Count)];
             var personGender = genderDictionary[gender];
             var passportSerialNumber = rnd.Next(MaxPassportSerialNumber);
             var passportId = rnd.Next(MaxPassportId);
 
-            //TODO: RSDN
+            //TODO:  +
             if (familyStatus != FamilyStatus.Married)
             {
-                return new Adult(passportSerialNumber, passportId, name, rndSurname,rnd.Next(AdultAge, MaxAge),
-                    personGender, familyStatus, rndJob);
+                return new Adult
+                (
+                    passportSerialNumber, passportId, name, rndSurname,
+                    rnd.Next(AdultAge, MaxAge),
+                    personGender, familyStatus, rndJob
+                    );
             }
-            return new Adult(passportSerialNumber, passportId, name, rndSurname, rnd.Next(AdultAge, MaxAge),
-                personGender, familyStatus, rndJob, partnerName, rndSurname);
+            return new Adult
+            (
+                passportSerialNumber, passportId, name, rndSurname,
+                rnd.Next(AdultAge, MaxAge),
+                personGender, familyStatus, rndJob,
+                partnerName, rndSurname
+                );
 
         }
 

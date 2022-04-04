@@ -140,18 +140,18 @@ namespace ClassLibrary1
             var kinderGardenName = kinderGardenList[rnd.Next(kinderGardenList.Length)];
             string motherName = null;
             string fatherName = null;
-            //TODO:
+            //TODO: +
             switch (rndParent)
             {
-                //
+                // Child has no mother.
                 case 0:
                     fatherName = rndMaleNames;
                     break;
-                //
+                // Child has no father
                 case 1:
                     motherName = rndFemaleNames;
                     break;
-                //
+                // Child has mother and father 
                 case 2:
                     motherName = rndFemaleNames;
                     fatherName = rndMaleNames;
