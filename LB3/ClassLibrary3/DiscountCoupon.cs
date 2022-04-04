@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary3
 {
-    internal class Program
+    internal class DiscountCoupon
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

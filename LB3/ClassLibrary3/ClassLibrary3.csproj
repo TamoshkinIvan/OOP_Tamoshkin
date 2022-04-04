@@ -43,7 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="DiscountBase.cs" />
+    <Compile Include="DiscountCoupon.cs" />
+    <Compile Include="DiscountPercent.cs" />
+    <Compile Include="DiscountType.cs" />
+    <Compile Include="DiscoutList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
