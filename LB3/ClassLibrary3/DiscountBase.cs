@@ -91,7 +91,7 @@ namespace ClassLibrary3
         /// </summary>
         /// <param name="price">Purchase price </param>
         /// <returns></returns>
-        protected internal abstract float CalculateDiscount(float price);
+        protected abstract float CalculateDiscount(float price);
 
 
     }

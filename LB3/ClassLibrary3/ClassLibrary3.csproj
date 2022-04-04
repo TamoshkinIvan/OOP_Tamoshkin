@@ -48,6 +48,7 @@
     <Compile Include="DiscountPercent.cs" />
     <Compile Include="DiscountType.cs" />
     <Compile Include="DiscoutList.cs" />
+    <Compile Include="GoodsType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
