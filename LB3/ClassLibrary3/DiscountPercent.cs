@@ -46,6 +46,11 @@ namespace ClassLibrary3
             ClientId = clientId;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="price"></param>
+        /// <returns></returns>
         protected override float CalculateDiscount(float price)
         {
             return price * (1 - DiscountValue / 100);

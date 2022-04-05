@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary3
 {
-    internal class DiscountCoupon
+    internal class DiscountCoupon 
     {
     }
 }
