@@ -140,7 +140,7 @@ namespace ClassLibrary1
             var kinderGardenName = kinderGardenList[rnd.Next(kinderGardenList.Length)];
             string motherName = null;
             string fatherName = null;
-            //TODO: +
+
             switch (rndParent)
             {
                 // Child has no mother.
