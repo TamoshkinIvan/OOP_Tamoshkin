@@ -56,6 +56,7 @@ namespace ClassLibrary3
                             $"between {MinDiscount} and {MaxDiscount}"
                         );
                 }
+                _discountValue = value;
             }
         }
 
@@ -70,6 +71,8 @@ namespace ClassLibrary3
                         "Price should be more than zero. Please, try again!"
                     );
                 }
+                _price = value;
+
             }
         }
 
