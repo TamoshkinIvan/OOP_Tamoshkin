@@ -10,7 +10,6 @@ namespace ClassLibrary3
     {
         Clothes,
         Food,
-        HouseCare,
         ChildrenProducts
     }
 }

@@ -7,18 +7,17 @@ using System.Threading.Tasks;
 namespace ClassLibrary3
 {
     /// <summary>
-    /// 
+    /// Класс процентной скидки
     /// </summary>
     public class DiscountPercent: IDiscount
     {
         /// <summary>
-        /// 
+        /// Сумма покупки указанной категории товара
         /// </summary>
         private float _price;
 
-
         /// <summary>
-        /// 
+        /// Сумма покупки указанной категории товара 
         /// </summary>
         public float Price
         {
@@ -33,21 +32,18 @@ namespace ClassLibrary3
                 _price = value;
             }
         }
-
-
-
+        
         /// <summary>
-        /// 
+        /// Категория товара
         /// </summary>
         public GoodsType GoodsType { get; set; }
 
 
         /// <summary>
-        /// 
+        /// Конструктор категории товара
         /// </summary>
-        /// <param name="good"></param>
-        /// <param name="discountValue"></param>
-        /// <param name="price"></param>
+        /// <param name="good">Категория товара</param>
+        /// <param name="price">Цена</param>
         public DiscountPercent(GoodsType good, float price)
         {
             Price = price;
@@ -55,9 +51,9 @@ namespace ClassLibrary3
         }
 
         /// <summary>
-        /// 
+        /// Метод расчета конечной цены
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Конечная цена</returns>
         /// <exception cref="ArgumentException"></exception>
         public double CalculateDiscount()
         {
@@ -65,7 +61,7 @@ namespace ClassLibrary3
             switch (GoodsType)
             {
                 case GoodsType.Clothes:
-                    return (Price * 0.98) ;
+                    return Price * 0.98;
                 case GoodsType.ChildrenProducts:
                     return Price * 0.95;
                 case GoodsType.Food:
@@ -73,6 +69,16 @@ namespace ClassLibrary3
                 default:
                     throw new ArgumentException("Указан неверный тип продукта");
             }
+        }
+
+        /// <summary>
+        /// Метод печати чека
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public string GetTax()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassLibrary3
 {
-    interface IDiscount
+    public interface IDiscount
     {
+        float Price { get; set; }
+
         double CalculateDiscount();
+
+        string GetTax();
     }
 }

@@ -1,16 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ClassLibrary3;
+
+
 
 namespace LB3
 {
     internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("fuck you");
+            //IDiscount coupon = new DiscountCoupon();
+            //Console.WriteLine(coupon.CalculateDiscount());
+            IDiscount percent = new DiscountPercent(GoodsType.Food, 982);
+            Console.WriteLine(percent.CalculateDiscount());
+
+            
+            percent.Price = 500;
+            Console.WriteLine(percent.CalculateDiscount());
+            Console.ReadKey();
+
         }
     }
 }
