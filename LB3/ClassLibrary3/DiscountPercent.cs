@@ -57,7 +57,6 @@ namespace ModelLab3
         /// <exception cref="ArgumentException"></exception>
         public double CalculateDiscount()
         {
-            
             switch (GoodsType)
             {
                 case GoodsType.Clothes:
