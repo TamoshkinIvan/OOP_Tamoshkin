@@ -9,14 +9,11 @@ namespace LB3
     {
         private static void Main(string[] args)
         {
-            //IDiscount coupon = new DiscountCoupon();
-            //Console.WriteLine(coupon.CalculateDiscount());
+            IDiscount coupon = new DiscountCoupon(GoodsType.Food, 3000, 500);
             IDiscount percent = new DiscountPercent(GoodsType.Food, 982);
-            Console.WriteLine(percent.CalculateDiscount());
 
-            
-            percent.Price = 500;
-            Console.WriteLine(percent.CalculateDiscount());
+            Console.WriteLine(percent.GetTax());
+            Console.WriteLine(coupon.GetTax());
             Console.ReadKey();
 
         }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClassLibrary3
 {
@@ -29,10 +25,11 @@ namespace ClassLibrary3
             get => _discount;
             set
             {
-                if (value <= 0)
+                if (value <= 0 || value >= 1000)
                 {
                     throw new ArgumentException(
-                        "Повторите ввод. Скидка должна быть больше нуля.");
+                        "Повторите ввод. Скидка должна быть больше нуля и" +
+                        "не больше максимально допустимой суммы.");
                 }
                 _discount = value;
             }
@@ -80,7 +77,17 @@ namespace ClassLibrary3
         /// <exception cref="NotImplementedException"></exception>
         public double CalculateDiscount()
         {
-            throw new NotImplementedException();
+            switch (GoodsType)
+            {
+                case GoodsType.Food when Price >= 2000:
+                    return Price - Discount;
+                case GoodsType.ChildrenProducts when Price >= 3000:
+                    return Price - Discount;
+                case GoodsType.Clothes when Price >= 5000:
+                    return Price - Discount;
+                default:
+                    return Price;
+            }
         }
 
         /// <summary>
@@ -90,7 +97,13 @@ namespace ClassLibrary3
         /// <exception cref="NotImplementedException"></exception>
         public string GetTax()
         {
-            throw new NotImplementedException();
+            return "*************" +
+                   $"\n Выбранная категория товара {GoodsType} руб." +
+                   $"\n Тип скидки: Скидка по купону на весь чек." +
+                   $"\n Цена без учета скидки: {Price} руб." +
+                   $"\n Цена с учетом скидки: {CalculateDiscount()} руб." +
+                   $"\n Сумма скидки: {Price - CalculateDiscount()} руб." +
+                   "\n*************\n";
         }
     }
 }

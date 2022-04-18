@@ -67,7 +67,7 @@ namespace ClassLibrary3
                 case GoodsType.Food:
                     return Price * 0.8;
                 default:
-                    throw new ArgumentException("Указан неверный тип продукта");
+                    return Price;
             }
         }
 
@@ -75,10 +75,16 @@ namespace ClassLibrary3
         /// Метод печати чека
         /// </summary>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
+        /// <exception cref="NotImplementedException"></exception
         public string GetTax()
         {
-            throw new NotImplementedException();
+            return "*************" +
+                   $"\n Выбранная категория товара {GoodsType} руб." +
+                   $"\n Тип скидки: Скидка на выбранную категорию товара." +
+                   $"\n Цена без учета скидки: {Price} руб." +
+                   $"\n Цена с учетом скидки: {CalculateDiscount()} руб." +
+                   $"\n Сумма скидки: {Price - CalculateDiscount()} руб." +
+                   "\n*************\n";
         }
     }
 }
