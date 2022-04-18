@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClassLibrary3
+namespace ModelLab3
 {
     /// <summary>
     /// Класс скидки по купону

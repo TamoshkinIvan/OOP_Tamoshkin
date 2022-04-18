@@ -69,9 +69,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary3\ClassLibrary3.csproj">
+    <ProjectReference Include="..\ClassLibrary3\ModelLab3.csproj">
       <Project>{00baf6c3-829c-4945-91ee-f42934fb0693}</Project>
-      <Name>ClassLibrary3</Name>
+      <Name>ModelLab3</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
