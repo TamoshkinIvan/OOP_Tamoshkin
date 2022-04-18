@@ -1,0 +1,3 @@
+I:\OOP\OOP_Tamoshkin\LB3\LB3\obj\Debug\LB3.csproj.AssemblyReference.cache
+I:\OOP\OOP_Tamoshkin\LB3\LB3\obj\Debug\LB3.csproj.SuggestedBindingRedirects.cache
+I:\OOP\OOP_Tamoshkin\LB3\LB3\obj\Debug\LB3.csproj.CoreCompileInputs.cache

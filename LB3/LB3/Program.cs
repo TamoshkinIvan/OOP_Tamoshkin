@@ -10,6 +10,7 @@ namespace LB3
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("fuck you");
         }
     }
 }

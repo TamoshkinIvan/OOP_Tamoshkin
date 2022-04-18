@@ -9,52 +9,70 @@ namespace ClassLibrary3
     /// <summary>
     /// 
     /// </summary>
-    public class DiscountPercent: DiscountBase
+    public class DiscountPercent: IDiscount
     {
         /// <summary>
         /// 
         /// </summary>
-        private string _clientId;
+        private float _price;
+
 
         /// <summary>
-        /// Client Id
+        /// 
         /// </summary>
-        public string ClientId
+        public float Price
         {
-            get => _clientId;
+            get => _price;
             set
             {
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                if (value <= 0)
                 {
-                    throw new ArgumentNullException(nameof(value));
+                    throw new ArgumentException(
+                        "Сумма покупки должна быть больше нуля. Повторите ввод.");
                 }
-                _clientId = value;
-
+                _price = value;
             }
         }
 
+
+
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="discountType"></param>
+        public GoodsType GoodsType { get; set; }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="good"></param>
         /// <param name="discountValue"></param>
         /// <param name="price"></param>
-        /// <param name="clientId"></param>
-        public DiscountPercent(DiscountType discountType, int discountValue, float price, string clientId)
-            : base(discountType, discountValue, price)
+        public DiscountPercent(GoodsType good, float price)
         {
-            ClientId = clientId;
+            Price = price;
+            GoodsType = good;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="price"></param>
         /// <returns></returns>
-        protected override float CalculateDiscount(float price)
+        /// <exception cref="ArgumentException"></exception>
+        public double CalculateDiscount()
         {
-            return price * (1 - DiscountValue / 100);
+            
+            switch (GoodsType)
+            {
+                case GoodsType.Clothes:
+                    return (Price * 0.98) ;
+                case GoodsType.ChildrenProducts:
+                    return Price * 0.95;
+                case GoodsType.Food:
+                    return Price * 0.8;
+                default:
+                    throw new ArgumentException("Указан неверный тип продукта");
+            }
         }
-
     }
 }
