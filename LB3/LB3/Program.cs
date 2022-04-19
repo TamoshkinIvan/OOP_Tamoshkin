@@ -22,9 +22,7 @@ namespace LB3
             {
                 Console.WriteLine(GetTax(discount));
             }
-
             Console.ReadKey();
-
 
         }
 
