@@ -22,5 +22,16 @@ namespace ModelLab3
         /// </summary>
         /// <returns></returns>
         string GetTax();
+
+        /// <summary>
+        /// Сумма покупки указанной категории товара 
+        /// </summary>
+        float Price { get; set; }
+
+        /// <summary>
+        /// Категория товара
+        /// </summary>
+        GoodsType GoodsType { get; set; }
+
     }
 }
