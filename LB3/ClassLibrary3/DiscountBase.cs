@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace ModelLab3
 {
-    //TODO: Базовый класс?
     /// <summary>
     /// Реализация интерфейса Discount
     /// </summary>
@@ -52,6 +51,7 @@ namespace ModelLab3
             GoodsType = good;
         }
 
+        //TODO: свойство
         /// <summary>
         /// Метод расчета цены с учетом скидки
         /// </summary>

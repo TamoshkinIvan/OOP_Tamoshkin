@@ -36,6 +36,5 @@ namespace ModelLab3
                     return Price;
             }
         }
-        //TODO: duplicatio
     }
 }
