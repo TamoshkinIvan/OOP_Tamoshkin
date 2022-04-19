@@ -74,7 +74,6 @@ namespace ModelLab3
         /// Метод расчета итоговой стоимости
         /// </summary>
         /// <returns>Итоговая стоимость</returns>
-        /// <exception cref="NotImplementedException"></exception>
         public double CalculateDiscount()
         {
             switch (GoodsType)
@@ -90,11 +89,11 @@ namespace ModelLab3
             }
         }
 
+        //TODO: duplication
         /// <summary>
         /// Метод печати чека
         /// </summary>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
         public string GetTax()
         {
             return "*************" +

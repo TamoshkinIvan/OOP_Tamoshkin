@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModelLab3
 {
+    //TODO: Базовый класс?
     /// <summary>
     /// Реализация интерфейса Discount
     /// </summary>
@@ -32,6 +33,5 @@ namespace ModelLab3
         /// Категория товара
         /// </summary>
         GoodsType GoodsType { get; set; }
-
     }
 }
