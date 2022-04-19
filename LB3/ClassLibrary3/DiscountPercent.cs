@@ -9,52 +9,20 @@ namespace ModelLab3
     /// <summary>
     /// Класс процентной скидки
     /// </summary>
-    public class DiscountPercent: IDiscount
+    public class DiscountPercent: DiscountBase
     {
-        /// <summary>
-        /// Сумма покупки указанной категории товара
-        /// </summary>
-        private float _price;
-
-        /// <summary>
-        /// Сумма покупки указанной категории товара 
-        /// </summary>
-        public float Price
-        {
-            get => _price;
-            set
-            {
-                if (value <= 0)
-                {
-                    throw new ArgumentException(
-                        "Сумма покупки должна быть больше нуля. Повторите ввод.");
-                }
-                _price = value;
-            }
-        }
-        
-        /// <summary>
-        /// Категория товара
-        /// </summary>
-        public GoodsType GoodsType { get; set; }
-
-
         /// <summary>
         /// Конструктор категории товара
         /// </summary>
         /// <param name="good">Категория товара</param>
         /// <param name="price">Цена</param>
-        public DiscountPercent(GoodsType good, float price)
-        {
-            Price = price;
-            GoodsType = good;
-        }
+        public DiscountPercent(GoodsType good, float price): base(good, price){}
 
         /// <summary>
         /// Метод расчета конечной цены
         /// </summary>
         /// <returns>Конечная цена</returns>
-        public double CalculateDiscount()
+        public override double CalculateDiscount()
         {
             switch (GoodsType)
             {

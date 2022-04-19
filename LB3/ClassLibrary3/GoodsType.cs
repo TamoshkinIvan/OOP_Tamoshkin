@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 namespace ModelLab3
 {
     //TODO: XML
+    /// <summary>
+    /// Список типов товара
+    /// </summary>
     public enum GoodsType
     {
         Clothes,

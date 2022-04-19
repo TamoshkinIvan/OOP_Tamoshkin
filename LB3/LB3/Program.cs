@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using ModelLab3;
 
 
@@ -9,12 +10,19 @@ namespace LB3
     {
         private static void Main(string[] args)
         {
-            //TODO:
-            IDiscount coupon = new DiscountCoupon(GoodsType.Food, 3000, 3000);
-            IDiscount percent = new DiscountPercent(GoodsType.Food, 982);
+            
+            var discountList = new List<DiscountBase>()
+            {
+                new DiscountCoupon(GoodsType.Food, 3000, 250),
+                new DiscountPercent(GoodsType.Food, 982)
 
-            Console.WriteLine(percent.GetTax());
-            Console.WriteLine(coupon.GetTax());
+            };
+
+            foreach (var discount in discountList)
+            {
+                Console.WriteLine(discount.CalculateDiscount());
+            }
+
             Console.ReadKey();
         }
     }

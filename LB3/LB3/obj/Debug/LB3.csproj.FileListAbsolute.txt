@@ -4,9 +4,9 @@ I:\OOP\OOP_Tamoshkin\LB3\LB3\obj\Debug\LB3.csproj.CoreCompileInputs.cache
 I:\OOP\OOP_Tamoshkin\LB3\LB3\bin\Debug\LB3.exe.config
 I:\OOP\OOP_Tamoshkin\LB3\LB3\bin\Debug\LB3.exe
 I:\OOP\OOP_Tamoshkin\LB3\LB3\bin\Debug\LB3.pdb
-I:\OOP\OOP_Tamoshkin\LB3\LB3\bin\Debug\ClassLibrary3.dll
-I:\OOP\OOP_Tamoshkin\LB3\LB3\bin\Debug\ClassLibrary3.pdb
-I:\OOP\OOP_Tamoshkin\LB3\LB3\bin\Debug\ClassLibrary3.dll.config
 I:\OOP\OOP_Tamoshkin\LB3\LB3\obj\Debug\LB3.csproj.CopyComplete
 I:\OOP\OOP_Tamoshkin\LB3\LB3\obj\Debug\LB3.exe
 I:\OOP\OOP_Tamoshkin\LB3\LB3\obj\Debug\LB3.pdb
+I:\OOP\OOP_Tamoshkin\LB3\LB3\bin\Debug\ModelLab3.dll
+I:\OOP\OOP_Tamoshkin\LB3\LB3\bin\Debug\ModelLab3.pdb
+I:\OOP\OOP_Tamoshkin\LB3\LB3\bin\Debug\ModelLab3.dll.config

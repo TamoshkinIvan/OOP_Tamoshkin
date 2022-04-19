@@ -5,13 +5,8 @@ namespace ModelLab3
     /// <summary>
     /// Класс скидки по купону
     /// </summary>
-    public class DiscountCoupon : IDiscount
+    public class DiscountCoupon : DiscountBase
     {
-        /// <summary>
-        /// Цена выбранной категории товара
-        /// </summary>
-        private float _price;
-        
         /// <summary>
         /// Сумма списываемых рублей по купону
         /// </summary>
@@ -34,39 +29,16 @@ namespace ModelLab3
                 _discount = value;
             }
         }
-
+        
         /// <summary>
-        /// Цена указанной категории товара
+        /// Конструктор товара
         /// </summary>
-        public float Price
-        {
-            get => _price;
-            set
-            {
-                if (value <= 0)
-                {
-                    throw new ArgumentException(
-                        "Сумма покупки должна быть больше нуля. Повторите ввод.");
-                }
-                _price = value;
-            }
-        }
-
-        /// <summary>
-        /// Категория товара
-        /// </summary>
-        public GoodsType GoodsType { get; set; }
-
-        /// <summary>
-        /// Конструктор категории товара
-        /// </summary>
-        /// <param name="goodType">Категория товара</param>
-        /// <param name="price">Цена указанной категории товара</param>
-        /// <param name="discount">Сумма списываемых рублей</param>
+        /// <param name="goodType"></param>
+        /// <param name="price"></param>
+        /// <param name="discount"></param>
         public DiscountCoupon(GoodsType goodType, float price, float discount)
+            : base(goodType, price)
         {
-            GoodsType = goodType;
-            Price = price;
             Discount = discount;
         }
 
@@ -74,7 +46,7 @@ namespace ModelLab3
         /// Метод расчета итоговой стоимости
         /// </summary>
         /// <returns>Итоговая стоимость</returns>
-        public double CalculateDiscount()
+        public override double CalculateDiscount()
         {
             switch (GoodsType)
             {
