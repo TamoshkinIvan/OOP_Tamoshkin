@@ -16,7 +16,9 @@ namespace ModelLab3
         /// </summary>
         /// <param name="good">Категория товара</param>
         /// <param name="price">Цена</param>
-        public DiscountPercent(GoodsType good, float price): base(good, price){}
+        /// <param name="finalPrice">Сумма с учетом скидки</param>
+        public DiscountPercent(GoodsType good, float price): base(good, price) {}
+
 
         /// <summary>
         /// Метод расчета конечной цены

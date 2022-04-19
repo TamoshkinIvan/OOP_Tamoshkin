@@ -33,9 +33,10 @@ namespace ModelLab3
         /// <summary>
         /// Конструктор товара
         /// </summary>
-        /// <param name="goodType"></param>
-        /// <param name="price"></param>
-        /// <param name="discount"></param>
+        /// <param name="goodType">Тип товара</param>
+        /// <param name="price">Цена</param>
+        /// <param name="finalPrice">Сумма с учетом скидки</param>
+        /// <param name="discount">Размер скидки</param>
         public DiscountCoupon(GoodsType goodType, float price, float discount)
             : base(goodType, price)
         {

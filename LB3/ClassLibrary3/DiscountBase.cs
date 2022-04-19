@@ -33,18 +33,22 @@ namespace ModelLab3
             }
         }
 
+        /// <summary>
+        /// Сумма с учетом скидки
+        /// </summary>
+        public  double FinalPrice => CalculateDiscount();
 
         /// <summary>
         /// Категория товара
         /// </summary>
         public GoodsType GoodsType { get; set; }
 
-
         /// <summary>
         /// Конструктор категории товара
         /// </summary>
         /// <param name="good">Категория товара</param>
         /// <param name="price">Цена</param>
+        /// <param name="finalPrice"></param>
         protected DiscountBase(GoodsType good, float price)
         {
             Price = price;
