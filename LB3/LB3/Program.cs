@@ -20,10 +20,27 @@ namespace LB3
 
             foreach (var discount in discountList)
             {
-                Console.WriteLine(discount.CalculateDiscount());
+                Console.WriteLine(GetTax(discount));
             }
 
             Console.ReadKey();
+
+
+        }
+
+        /// <summary>
+        /// Метод печати чека
+        /// </summary>
+        /// <returns></returns>
+        public static string GetTax(DiscountBase discount)
+        {
+            return "*************" +
+                   $"\n Выбранная категория товара {discount.GoodsType} руб." +
+                   $"\n Тип скидки: Скидка на выбранную категорию товара." +
+                   $"\n Цена без учета скидки: {discount.Price} руб." +
+                   $"\n Цена с учетом скидки: {discount .CalculateDiscount()} руб." +
+                   $"\n Сумма скидки: {discount.Price  - discount.CalculateDiscount()} руб." +
+                   "\n*************\n";
         }
     }
 }

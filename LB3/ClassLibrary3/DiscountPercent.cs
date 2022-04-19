@@ -36,21 +36,6 @@ namespace ModelLab3
                     return Price;
             }
         }
-
-        //TODO: duplication
-        /// <summary>
-        /// Метод печати чека
-        /// </summary>
-        /// <returns></returns>
-        public string GetTax()
-        {
-            return "*************" +
-                   $"\n Выбранная категория товара {GoodsType} руб." +
-                   $"\n Тип скидки: Скидка на выбранную категорию товара." +
-                   $"\n Цена без учета скидки: {Price} руб." +
-                   $"\n Цена с учетом скидки: {CalculateDiscount()} руб." +
-                   $"\n Сумма скидки: {Price - CalculateDiscount()} руб." +
-                   "\n*************\n";
-        }
+        //TODO: duplicatio
     }
 }
