@@ -29,13 +29,14 @@ namespace LB3
         /// <returns></returns>
         public static string GetTax(DiscountBase discount)
         {
-            
+            var price = discount.Price;
+            var finalPrice = discount.FinalPrice;
             return "*************" +
                    $"\n Выбранная категория товара {discount.GoodsType} руб." +
                    $"\n Тип скидки: Скидка на выбранную категорию товара." +
-                   $"\n Цена без учета скидки: {discount.Price} руб." +
-                   $"\n Цена с учетом скидки: {discount.FinalPrice} руб." +
-                   $"\n Сумма скидки: {discount.Price - discount.FinalPrice} руб." +
+                   $"\n Цена без учета скидки: {price} руб." +
+                   $"\n Цена с учетом скидки: {finalPrice} руб." +
+                   $"\n Сумма скидки: {price - finalPrice} руб." +
                    "\n*************\n";
         }
     }
