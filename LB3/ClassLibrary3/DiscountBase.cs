@@ -34,11 +34,6 @@ namespace ModelLab3
         }
 
         /// <summary>
-        /// Сумма с учетом скидки
-        /// </summary>
-        public  double FinalPrice => CalculateDiscount();
-
-        /// <summary>
         /// Категория товара
         /// </summary>
         public GoodsType GoodsType { get; set; }
@@ -48,7 +43,6 @@ namespace ModelLab3
         /// </summary>
         /// <param name="good">Категория товара</param>
         /// <param name="price">Цена</param>
-        /// <param name="finalPrice"></param>
         protected DiscountBase(GoodsType good, float price)
         {
             Price = price;
@@ -60,6 +54,6 @@ namespace ModelLab3
         /// Метод расчета цены с учетом скидки
         /// </summary>
         /// <returns></returns>
-        public abstract double CalculateDiscount();
+        public abstract double CalculateDiscount { get; }
     }
 }

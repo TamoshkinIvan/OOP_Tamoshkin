@@ -35,7 +35,6 @@ namespace ModelLab3
         /// </summary>
         /// <param name="goodType">Тип товара</param>
         /// <param name="price">Цена</param>
-        /// <param name="finalPrice">Сумма с учетом скидки</param>
         /// <param name="discount">Размер скидки</param>
         public DiscountCoupon(GoodsType goodType, float price, float discount)
             : base(goodType, price)
@@ -44,22 +43,26 @@ namespace ModelLab3
         }
 
         /// <summary>
-        /// Метод расчета итоговой стоимости
+        /// Расчета итоговой стоимости
         /// </summary>
         /// <returns>Итоговая стоимость</returns>
-        public override double CalculateDiscount()
+        public override double CalculateDiscount
         {
-            switch (GoodsType)
-            {
-                case GoodsType.Food when Price >= 2000:
-                    return Price - Discount;
-                case GoodsType.ChildrenProducts when Price >= 3000:
-                    return Price - Discount;
-                case GoodsType.Clothes when Price >= 5000:
-                    return Price - Discount;
-                default:
-                    return Price;
-            }
+            get
+                {
+                  switch (GoodsType)
+                      {
+                      case GoodsType.Food when Price >= 2000:
+                          return Price - Discount;
+                      case GoodsType.ChildrenProducts when Price >= 3000:
+                          return Price - Discount;
+                      case GoodsType.Clothes when Price >= 5000:
+                          return Price - Discount;
+                      default:
+                          return Price;
+                      }
+                }
+            
         }
     }
 }

@@ -16,27 +16,29 @@ namespace ModelLab3
         /// </summary>
         /// <param name="good">Категория товара</param>
         /// <param name="price">Цена</param>
-        /// <param name="finalPrice">Сумма с учетом скидки</param>
-        public DiscountPercent(GoodsType good, float price): base(good, price) {}
+        public DiscountPercent(GoodsType good, float price) 
+            : base(good, price) {}
 
 
         /// <summary>
         /// Метод расчета конечной цены
         /// </summary>
         /// <returns>Конечная цена</returns>
-        public override double CalculateDiscount()
+        public override double CalculateDiscount
         {
-            switch (GoodsType)
-            {
-                case GoodsType.Clothes:
-                    return Price * 0.98;
-                case GoodsType.ChildrenProducts:
-                    return Price * 0.95;
-                case GoodsType.Food:
-                    return Price * 0.8;
-                default:
-                    return Price;
-            }
+            get {
+                    switch (GoodsType)
+                    {
+                        case GoodsType.Clothes:
+                            return Price * 0.98;
+                        case GoodsType.ChildrenProducts:
+                            return Price * 0.95;
+                        case GoodsType.Food:
+                            return Price * 0.8;
+                        default:
+                            return Price;
+                    }
+                }
         }
     }
 }
