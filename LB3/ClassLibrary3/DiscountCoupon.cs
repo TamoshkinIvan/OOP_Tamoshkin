@@ -49,19 +49,19 @@ namespace ModelLab3
         public override double CalculateDiscount
         {
             get
-                {
-                  switch (GoodsType)
-                      {
-                      case GoodsType.Food when Price >= 2000:
-                          return Price - Discount;
-                      case GoodsType.ChildrenProducts when Price >= 3000:
-                          return Price - Discount;
-                      case GoodsType.Clothes when Price >= 5000:
-                          return Price - Discount;
-                      default:
-                          return Price;
-                      }
-                }
+            {
+              switch (GoodsType)
+                  {
+                  case GoodsType.Food when Price >= 2000:
+                      return Price - Discount;
+                  case GoodsType.ChildrenProducts when Price >= 3000:
+                      return Price - Discount;
+                  case GoodsType.Clothes when Price >= 5000:
+                      return Price - Discount;
+                  default:
+                      return Price;
+                  }
+            }
             
         }
     }

@@ -26,19 +26,20 @@ namespace ModelLab3
         /// <returns>Конечная цена</returns>
         public override double CalculateDiscount
         {
-            get {
-                    switch (GoodsType)
-                    {
-                        case GoodsType.Clothes:
-                            return Price * 0.98;
-                        case GoodsType.ChildrenProducts:
-                            return Price * 0.95;
-                        case GoodsType.Food:
-                            return Price * 0.8;
-                        default:
-                            return Price;
-                    }
+            get 
+            {
+                switch (GoodsType)
+                {
+                    case GoodsType.Clothes:
+                        return Price * 0.98;
+                    case GoodsType.ChildrenProducts:
+                        return Price * 0.95;
+                    case GoodsType.Food:
+                        return Price * 0.8;
+                    default:
+                        return Price;
                 }
+            }
         }
     }
 }

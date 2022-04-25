@@ -48,8 +48,7 @@ namespace ModelLab3
             Price = price;
             GoodsType = good;
         }
-
-        //TODO: свойство
+        
         /// <summary>
         /// Метод расчета цены с учетом скидки
         /// </summary>
