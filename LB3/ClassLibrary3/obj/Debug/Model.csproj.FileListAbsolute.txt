@@ -1,0 +1,7 @@
+I:\OOP\OOP_Tamoshkin\LB3\ClassLibrary3\bin\Debug\Model.dll.config
+I:\OOP\OOP_Tamoshkin\LB3\ClassLibrary3\bin\Debug\Model.dll
+I:\OOP\OOP_Tamoshkin\LB3\ClassLibrary3\bin\Debug\Model.pdb
+I:\OOP\OOP_Tamoshkin\LB3\ClassLibrary3\obj\Debug\Model.csproj.AssemblyReference.cache
+I:\OOP\OOP_Tamoshkin\LB3\ClassLibrary3\obj\Debug\Model.csproj.CoreCompileInputs.cache
+I:\OOP\OOP_Tamoshkin\LB3\ClassLibrary3\obj\Debug\Model.dll
+I:\OOP\OOP_Tamoshkin\LB3\ClassLibrary3\obj\Debug\Model.pdb

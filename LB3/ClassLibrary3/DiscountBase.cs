@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ModelLab3
+namespace Model
 {
     /// <summary>
     /// Реализация интерфейса Discount
@@ -48,18 +44,21 @@ namespace ModelLab3
         /// </summary>
         /// <param name="good">Категория товара</param>
         /// <param name="price">Цена</param>
-        /// <param name="finalPrice"></param>
         protected DiscountBase(GoodsType good, float price)
         {
             Price = price;
             GoodsType = good;
         }
 
-        //TODO: свойство
         /// <summary>
         /// Метод расчета цены с учетом скидки
         /// </summary>
         /// <returns></returns>
         public abstract double CalculateDiscount();
+
+        /// <summary>
+        /// Тип скидки
+        /// </summary>
+        public abstract DiscountType DiscountType { get;}
     }
 }

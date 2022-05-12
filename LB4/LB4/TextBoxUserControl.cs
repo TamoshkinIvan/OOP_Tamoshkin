@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LB4
+namespace View
 {
-    public partial class Form1 : Form
+    public partial class TextBoxUserControl : UserControl
     {
-        public Form1()
+        public TextBoxUserControl()
         {
             InitializeComponent();
         }

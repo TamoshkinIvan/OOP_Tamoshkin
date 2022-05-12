@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ModelLab3
+﻿namespace Model
 {
     /// <summary>
     /// Класс процентной скидки
     /// </summary>
     public class DiscountPercent: DiscountBase
     {
+        /// <summary>
+        /// Тип скидки
+        /// </summary>
+        public override DiscountType DiscountType => DiscountType.Percent;
+
         /// <summary>
         /// Конструктор категории товара
         /// </summary>

@@ -1,4 +1,4 @@
-﻿namespace ModelLab3
+﻿namespace Model
 {
     /// <summary>
     /// Список типов товара

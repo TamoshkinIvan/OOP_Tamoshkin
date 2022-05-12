@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{00BAF6C3-829C-4945-91EE-F42934FB0693}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>ModelLab3</RootNamespace>
-    <AssemblyName>ModelLab3</AssemblyName>
+    <RootNamespace>Model</RootNamespace>
+    <AssemblyName>Model</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DiscountCoupon.cs" />
     <Compile Include="DiscountPercent.cs" />
+    <Compile Include="DiscountType.cs" />
     <Compile Include="GoodsType.cs" />
     <Compile Include="DiscountBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

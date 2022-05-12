@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ModelLab3
+namespace Model
 {
     /// <summary>
     /// Класс скидки по купону
@@ -11,6 +11,11 @@ namespace ModelLab3
         /// Сумма списываемых рублей по купону
         /// </summary>
         private float _discount;
+
+        /// <summary>
+        /// Тип скидки
+        /// </summary>
+        public override DiscountType DiscountType => DiscountType.Coupon;
 
         /// <summary>
         /// Сумма списываемых рублей по купону
