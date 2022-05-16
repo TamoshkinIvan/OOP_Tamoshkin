@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 
@@ -40,7 +35,7 @@ namespace View
             this.MaximizeBox = false;
         }
 
-        private void ButtonCanceClick(object sender, EventArgs e)
+        private void ButtonCancelClick(object sender, EventArgs e)
         {
             CancelForm?.Invoke(sender, e);
             
@@ -79,6 +74,21 @@ namespace View
             }
 
             dataGridViewSearch.DataSource = foundDiscont;
+        }
+
+        private void SearchFormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseForm?.Invoke(sender, e);
+        }
+
+        private void ButtonReloadClick(object sender, EventArgs e)
+        {
+            dataGridViewSearch.DataSource = _dataSource;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

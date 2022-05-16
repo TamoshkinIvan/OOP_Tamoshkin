@@ -12,10 +12,15 @@ namespace Model
         /// </summary>
         private float _discount;
 
+
         /// <summary>
         /// Тип скидки
         /// </summary>
-        public override DiscountType DiscountType => DiscountType.Coupon;
+        public override DiscountType DiscountType
+        {
+            get => DiscountType.Coupon;
+        
+        }
 
         /// <summary>
         /// Сумма списываемых рублей по купону
@@ -34,7 +39,8 @@ namespace Model
                 _discount = value;
             }
         }
-        
+
+
         /// <summary>
         /// Конструктор товара
         /// </summary>
@@ -46,6 +52,14 @@ namespace Model
             : base(goodType, price)
         {
             Discount = discount;
+        }
+
+        /// <summary>
+        /// XLM конструктор
+        /// </summary>
+        protected DiscountCoupon()
+        {
+
         }
 
         /// <summary>

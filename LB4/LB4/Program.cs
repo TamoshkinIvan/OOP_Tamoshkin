@@ -1,6 +1,6 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Forms;
-using Model;
 
 
 namespace View
@@ -13,6 +13,8 @@ namespace View
         [STAThread]
         static void Main()
         {
+            //Console.OutputEncoding = System.Text.Encoding.GetEncoding("Cyrillic");
+            //Console.InputEncoding = System.Text.Encoding.GetEncoding("Cyrillic");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());

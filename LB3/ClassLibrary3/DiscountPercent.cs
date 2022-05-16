@@ -8,7 +8,11 @@
         /// <summary>
         /// Тип скидки
         /// </summary>
-        public override DiscountType DiscountType => DiscountType.Percent;
+        public override DiscountType DiscountType
+        {
+            get => DiscountType.Percent;
+
+        }
 
         /// <summary>
         /// Конструктор категории товара
@@ -17,6 +21,11 @@
         /// <param name="price">Цена</param>
         /// <param name="finalPrice">Сумма с учетом скидки</param>
         public DiscountPercent(GoodsType good, float price): base(good, price) {}
+
+        /// <summary>
+        /// XML конструктор
+        /// </summary>
+        protected DiscountPercent(){}
 
 
         /// <summary>

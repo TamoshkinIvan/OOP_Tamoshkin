@@ -100,5 +100,90 @@ namespace View
             this.Hide();
             EventHandler(searchForm);
         }
+
+        private void ButtonDeleteClick(object sender, EventArgs e)
+        {
+            if (dataGridViewData.SelectedRows.Count == 0)
+            {
+                ErrorMessageBox("Не выбрана строка для удаления.");
+                return;
+            }
+
+            foreach (DataGridViewRow row in dataGridViewData.SelectedRows)
+            {
+                _discountList.RemoveAt(row.Index);
+            }
+
+            if (dataGridViewData.RowCount != 0)
+            {
+                dataGridViewData.Rows[0].Selected = true;
+            }
+        }
+
+        private void SaveButtonClick(object sender, EventArgs e)
+        {
+            var fileBrowser = new SaveFileDialog();
+            fileBrowser.Filter = "DiscountBase (*.dc)|*.dc";
+            fileBrowser.ShowDialog();
+            string path = fileBrowser.FileName;
+
+            var xmlSerialaizer =
+                new XmlSerializer(typeof(BindingList<DiscountBase>));
+
+            if (string.IsNullOrEmpty(path))
+            {
+                return;
+            }
+
+            using (var fileWriter = new FileStream(path, FileMode.Create))
+            {
+                xmlSerialaizer.Serialize(fileWriter, _discountList);
+            }
+        }
+
+        private void ReadButtonClick(object sender, EventArgs e)
+        {
+            var fileBrowser = new OpenFileDialog();
+            fileBrowser.Filter = "DiscountBase (*.dc)|*.dc";
+            fileBrowser.ShowDialog();
+
+            string path = fileBrowser.FileName;
+
+            if (string.IsNullOrEmpty(path))
+            {
+                return;
+            }
+
+            var XmlSerializer =
+                new XmlSerializer(typeof(BindingList<DiscountBase>));
+
+            try
+            {
+                using (var fileReader = new FileStream(path, FileMode.Open))
+                {
+                    _discountList = (BindingList<DiscountBase>)
+                        XmlSerializer.Deserialize(fileReader);
+
+                }
+
+                ;
+
+                dataGridViewData.DataSource = _discountList;
+
+            }
+            catch (InvalidOperationException _)
+            {
+                ErrorMessageBox("Файл поврежден.");
+            }
+            catch (ArgumentException _)
+            {
+                ErrorMessageBox("Not valid data in file");
+            }
+            catch (Exception ex)
+            {
+                ErrorMessageBox(ex.Message);
+            }
+            
+        }
     }
 }

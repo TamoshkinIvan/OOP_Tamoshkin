@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 
@@ -13,11 +8,6 @@ namespace View
 {
     public partial class AddForm : EventForm
     {
-        /// <summary>
-        /// Data source for DataGrid
-        /// </summary>
-        private BindingList<DiscountProperties> _dataSource;
-
         public AddForm()
         {
             InitializeComponent();
@@ -35,8 +25,8 @@ namespace View
         private readonly List<DiscountType> _discountTypeList =
             new List<DiscountType>()
             {
-                DiscountType.Coupon,
-                DiscountType.Percent
+                Model.DiscountType.Coupon,
+                Model.DiscountType.Percent
             };
 
         private void AddFormLoad(object sender, EventArgs e)
@@ -51,6 +41,7 @@ namespace View
                 discountTypeComboBox.Items.Add(discountType);
             }
             textBoxCouponDiscount.Visible = false;
+            CouponDiscountValue.Visible = false;
         }
 
 
@@ -106,11 +97,13 @@ namespace View
             if (selectedDiscount.ToString() == "Coupon")
             {
                 textBoxCouponDiscount.Visible = true;
+                CouponDiscountValue.Visible = true;
                 textBoxCouponDiscount.Text = "";
             }
             else
             {
                 textBoxCouponDiscount.Visible = false;
+                CouponDiscountValue.Visible =false;
                 textBoxCouponDiscount.Text = "0";
             }
         }
@@ -120,9 +113,9 @@ namespace View
         {
             switch (discount)
             {
-                case DiscountType.Coupon:
+                case Model.DiscountType.Coupon:
                     return new DiscountCoupon(good, price, discountCoupon);
-                case DiscountType.Percent:
+                case Model.DiscountType.Percent:
                     return new DiscountPercent(good, price);
                 default:
                     return null;
@@ -138,6 +131,19 @@ namespace View
             (object sender, FormClosedEventArgs e)
         {
             CloseForm?.Invoke(sender, e);
+        }
+
+        private void RandomDiscountButtonClick(object sender, EventArgs e)
+        {
+            var rnd = new Random();
+
+            var discountType = _discountTypeList[rnd.Next(0, _discountTypeList.Count)];
+            var goodType = _goodsTypeList[rnd.Next(0, _goodsTypeList.Count)];
+            var discountRandom = GetDiscount(discountType, goodType,
+                rnd.Next(0, 10000), rnd.Next(0, 1000));
+            DiscountAdded.Invoke(this, new DiscountEventArgs(discountRandom));
+            Close();
+
         }
     }
 }
