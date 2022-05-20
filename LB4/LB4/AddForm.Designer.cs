@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxData = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.CouponDiscountValue = new System.Windows.Forms.Label();
             this.Price = new System.Windows.Forms.Label();
             this.GoodType = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.goodTypeComboBox = new System.Windows.Forms.ComboBox();
             this.discountTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBoxData.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,56 +56,68 @@
             this.groupBoxData.Controls.Add(this.textBoxPrice);
             this.groupBoxData.Controls.Add(this.goodTypeComboBox);
             this.groupBoxData.Controls.Add(this.discountTypeComboBox);
-            this.groupBoxData.Location = new System.Drawing.Point(16, 15);
-            this.groupBoxData.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxData.Location = new System.Drawing.Point(12, 12);
             this.groupBoxData.Name = "groupBoxData";
-            this.groupBoxData.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxData.Size = new System.Drawing.Size(421, 356);
+            this.groupBoxData.Size = new System.Drawing.Size(316, 289);
             this.groupBoxData.TabIndex = 1;
             this.groupBoxData.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(103, 236);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Random Discount";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.RandomDiscountButtonClick);
             // 
             // CouponDiscountValue
             // 
             this.CouponDiscountValue.AutoSize = true;
-            this.CouponDiscountValue.Location = new System.Drawing.Point(128, 209);
+            this.CouponDiscountValue.Location = new System.Drawing.Point(96, 170);
+            this.CouponDiscountValue.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CouponDiscountValue.Name = "CouponDiscountValue";
-            this.CouponDiscountValue.Size = new System.Drawing.Size(147, 16);
+            this.CouponDiscountValue.Size = new System.Drawing.Size(119, 13);
             this.CouponDiscountValue.TabIndex = 10;
             this.CouponDiscountValue.Text = "Coupon Discount Value";
             // 
             // Price
             // 
             this.Price.AutoSize = true;
-            this.Price.Location = new System.Drawing.Point(128, 154);
+            this.Price.Location = new System.Drawing.Point(96, 125);
+            this.Price.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Price.Name = "Price";
-            this.Price.Size = new System.Drawing.Size(38, 16);
+            this.Price.Size = new System.Drawing.Size(31, 13);
             this.Price.TabIndex = 9;
             this.Price.Text = "Price";
             // 
             // GoodType
             // 
             this.GoodType.AutoSize = true;
-            this.GoodType.Location = new System.Drawing.Point(128, 94);
+            this.GoodType.Location = new System.Drawing.Point(96, 76);
+            this.GoodType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.GoodType.Name = "GoodType";
-            this.GoodType.Size = new System.Drawing.Size(76, 16);
+            this.GoodType.Size = new System.Drawing.Size(60, 13);
             this.GoodType.TabIndex = 8;
             this.GoodType.Text = "Good Type";
             // 
             // DiscountType
             // 
             this.DiscountType.AutoSize = true;
-            this.DiscountType.Location = new System.Drawing.Point(128, 35);
+            this.DiscountType.Location = new System.Drawing.Point(96, 28);
+            this.DiscountType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.DiscountType.Name = "DiscountType";
-            this.DiscountType.Size = new System.Drawing.Size(94, 16);
+            this.DiscountType.Size = new System.Drawing.Size(76, 13);
             this.DiscountType.TabIndex = 7;
-            this.DiscountType.Text = "Discount Type"; 
+            this.DiscountType.Text = "Discount Type";
             // 
             // Cancel
             // 
-            this.Cancel.Location = new System.Drawing.Point(313, 291);
-            this.Cancel.Margin = new System.Windows.Forms.Padding(4);
+            this.Cancel.Location = new System.Drawing.Point(235, 236);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(100, 28);
+            this.Cancel.Size = new System.Drawing.Size(75, 23);
             this.Cancel.TabIndex = 6;
             this.Cancel.Text = "Cancel";
             this.Cancel.UseVisualStyleBackColor = true;
@@ -113,10 +125,9 @@
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(9, 291);
-            this.Add.Margin = new System.Windows.Forms.Padding(4);
+            this.Add.Location = new System.Drawing.Point(7, 236);
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(100, 28);
+            this.Add.Size = new System.Drawing.Size(75, 23);
             this.Add.TabIndex = 5;
             this.Add.Text = "Add";
             this.Add.UseVisualStyleBackColor = true;
@@ -124,59 +135,45 @@
             // 
             // textBoxCouponDiscount
             // 
-            this.textBoxCouponDiscount.Location = new System.Drawing.Point(131, 229);
-            this.textBoxCouponDiscount.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCouponDiscount.Location = new System.Drawing.Point(98, 186);
             this.textBoxCouponDiscount.Name = "textBoxCouponDiscount";
-            this.textBoxCouponDiscount.Size = new System.Drawing.Size(160, 22);
+            this.textBoxCouponDiscount.Size = new System.Drawing.Size(121, 20);
             this.textBoxCouponDiscount.TabIndex = 4;
             // 
             // textBoxPrice
             // 
-            this.textBoxPrice.Location = new System.Drawing.Point(131, 174);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPrice.Location = new System.Drawing.Point(98, 141);
             this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(160, 22);
+            this.textBoxPrice.Size = new System.Drawing.Size(121, 20);
             this.textBoxPrice.TabIndex = 3;
             // 
             // goodTypeComboBox
             // 
             this.goodTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.goodTypeComboBox.FormattingEnabled = true;
-            this.goodTypeComboBox.Location = new System.Drawing.Point(131, 114);
-            this.goodTypeComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.goodTypeComboBox.Location = new System.Drawing.Point(98, 93);
             this.goodTypeComboBox.Name = "goodTypeComboBox";
-            this.goodTypeComboBox.Size = new System.Drawing.Size(160, 24);
+            this.goodTypeComboBox.Size = new System.Drawing.Size(121, 21);
             this.goodTypeComboBox.TabIndex = 2;
             // 
             // discountTypeComboBox
             // 
             this.discountTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.discountTypeComboBox.FormattingEnabled = true;
-            this.discountTypeComboBox.Location = new System.Drawing.Point(131, 55);
-            this.discountTypeComboBox.Margin = new System.Windows.Forms.Padding(4);
+            this.discountTypeComboBox.Location = new System.Drawing.Point(98, 45);
             this.discountTypeComboBox.Name = "discountTypeComboBox";
-            this.discountTypeComboBox.Size = new System.Drawing.Size(160, 24);
+            this.discountTypeComboBox.Size = new System.Drawing.Size(121, 21);
             this.discountTypeComboBox.Sorted = true;
             this.discountTypeComboBox.TabIndex = 1;
             this.discountTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBoxDiscountTypeSelectedIndexChanged);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(137, 291);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 28);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Random Discount";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.RandomDiscountButtonClick);
-            // 
             // AddForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 384);
+            this.ClientSize = new System.Drawing.Size(338, 312);
             this.Controls.Add(this.groupBoxData);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddForm";
             this.Text = "InputForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddFormFormClosed);
