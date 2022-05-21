@@ -7,9 +7,14 @@ using Model;
 
 namespace View
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class MainForm : EventForm
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
         private BindingList<DiscountBase> _discountList =
             new BindingList<DiscountBase>()
             {
@@ -17,15 +22,20 @@ namespace View
                 new DiscountPercent(GoodsType.Clothes, 800)
             };
 
-
-
+        /// <summary>
+        /// 
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainFormLoad(object sender, EventArgs e)
         {
             dataGridViewData.RowHeadersVisible = false;
@@ -43,12 +53,17 @@ namespace View
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void groupBox1_Enter(object sender, EventArgs e) { }
 
-        }
-
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="form"></param>
         private void EventHandler(EventForm form)
         {
             form.CloseForm  += (o, args) =>
@@ -66,6 +81,10 @@ namespace View
             };
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="text"></param>
         private void ErrorMessageBox(string text)
         {
             MessageBox.Show(this,
@@ -76,6 +95,11 @@ namespace View
                 MessageBoxDefaultButton.Button1);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddDiscountClick(object sender, EventArgs e)
         {
             var addForm = new AddForm();
@@ -92,6 +116,11 @@ namespace View
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchButtonClick(object sender, EventArgs e)
         {
             var searchForm = new SearchForm(_discountList);
@@ -101,6 +130,11 @@ namespace View
             EventHandler(searchForm);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonDeleteClick(object sender, EventArgs e)
         {
             if (dataGridViewData.SelectedRows.Count == 0)
@@ -120,6 +154,11 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveButtonClick(object sender, EventArgs e)
         {
             var fileBrowser = new SaveFileDialog();
@@ -141,6 +180,11 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ReadButtonClick(object sender, EventArgs e)
         {
             var fileBrowser = new OpenFileDialog();

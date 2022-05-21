@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace Model
 {
     /// <summary>
-    /// Реализация интерфейса Discount
+    /// Реализация класса Discount
     /// </summary>
     [XmlInclude(typeof(DiscountCoupon))]
     [XmlInclude(typeof(DiscountPercent))]

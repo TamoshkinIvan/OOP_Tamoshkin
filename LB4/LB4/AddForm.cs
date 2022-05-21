@@ -6,13 +6,21 @@ using Model;
 
 namespace View
 {
+    /// <summary>
+    /// Реализация класса AddForm
+    /// </summary>
     public partial class AddForm : EventForm
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public AddForm()
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Список товаров
+        /// </summary>
         private readonly List<GoodsType> _goodsTypeList = 
             new List<GoodsType>()
             {
@@ -21,14 +29,20 @@ namespace View
                 GoodsType.Food
 
             };
-
+        /// <summary>
+        /// Список скидок
+        /// </summary>
         private readonly List<DiscountType> _discountTypeList =
             new List<DiscountType>()
             {
                 Model.DiscountType.Coupon,
                 Model.DiscountType.Percent
             };
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddFormLoad(object sender, EventArgs e)
         {
             groupBoxData.Visible = true;
@@ -44,7 +58,11 @@ namespace View
             CouponDiscountValue.Visible = false;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonAddClick(object sender, EventArgs e)
         {
             if (DataTableAddValidation())
@@ -71,6 +89,10 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private bool DataTableAddValidation()
         {
             if (discountTypeComboBox.SelectedIndex == -1)
@@ -91,6 +113,11 @@ namespace View
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ComboBoxDiscountTypeSelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedDiscount = discountTypeComboBox.SelectedItem;
@@ -108,7 +135,14 @@ namespace View
             }
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="discount"></param>
+        /// <param name="good"></param>
+        /// <param name="price"></param>
+        /// <param name="discountCoupon"></param>
+        /// <returns></returns>
         private DiscountBase GetDiscount(DiscountType discount ,GoodsType good, float price, float discountCoupon)
         {
             switch (discount)
@@ -122,17 +156,32 @@ namespace View
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButtonClick(object sender, EventArgs e)
         {
             CancelForm?.Invoke(sender, e);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddFormFormClosed
             (object sender, FormClosedEventArgs e)
         {
             CloseForm?.Invoke(sender, e);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RandomDiscountButtonClick(object sender, EventArgs e)
         {
             var rnd = new Random();

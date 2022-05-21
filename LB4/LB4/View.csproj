@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DiscountEventArgs.cs" />
-    <Compile Include="DiscountProperties.cs" />
     <Compile Include="EventForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,12 +73,6 @@
     <Compile Include="SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TextBoxUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="TextBoxUserControl.Designer.cs">
-      <DependentUpon>TextBoxUserControl.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AddForm.resx">
       <DependentUpon>AddForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,9 +91,6 @@
     </Compile>
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TextBoxUserControl.resx">
-      <DependentUpon>TextBoxUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
