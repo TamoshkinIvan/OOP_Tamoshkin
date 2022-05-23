@@ -198,6 +198,7 @@ namespace View
                 return;
             }
 
+            //TODO: RSDN
             var XmlSerializer =
                 new XmlSerializer(typeof(BindingList<DiscountBase>));
 
@@ -210,8 +211,6 @@ namespace View
 
                 }
 
-                ;
-
                 dataGridViewData.DataSource = _discountList;
 
             }
@@ -221,10 +220,12 @@ namespace View
             }
             catch (ArgumentException _)
             {
+                //TODO:
                 ErrorMessageBox("Not valid data in file");
             }
             catch (Exception ex)
             {
+                //TODO:
                 ErrorMessageBox(ex.Message);
             }
             

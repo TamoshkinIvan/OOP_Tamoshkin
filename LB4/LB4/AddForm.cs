@@ -18,6 +18,7 @@ namespace View
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// Список товаров
         /// </summary>
@@ -27,8 +28,8 @@ namespace View
                 GoodsType.ChildrenProducts,
                 GoodsType.Clothes,
                 GoodsType.Food
-
             };
+
         /// <summary>
         /// Список скидок
         /// </summary>
@@ -38,6 +39,7 @@ namespace View
                 Model.DiscountType.Coupon,
                 Model.DiscountType.Percent
             };
+
         /// <summary>
         /// 
         /// </summary>
@@ -130,7 +132,7 @@ namespace View
             else
             {
                 textBoxCouponDiscount.Visible = false;
-                CouponDiscountValue.Visible =false;
+                CouponDiscountValue.Visible = false;
                 textBoxCouponDiscount.Text = "0";
             }
         }
