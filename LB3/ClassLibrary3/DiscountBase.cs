@@ -21,16 +21,10 @@ namespace Model
         public double Price
         {
             get => _price;
-            set
-            {
-                if (value <= 0 || double.IsNaN(value) )
-                {
-                    throw new ArgumentException(
-                        "Сумма покупки должна быть больше нуля. Повторите ввод.");
-                }
-                _price = value;
-            }
+            set => _price = CheckValue(value);
         }
+
+        private double _finalPrice;
 
         /// <summary>
         /// Сумма с учетом скидки
@@ -47,7 +41,7 @@ namespace Model
         public double CalculatedDiscount
         {
             get => Price - FinalPrice;
-            set => _discount = value;
+            set => _discount = CheckValue(value);
         }
 
         /// <summary>
@@ -83,5 +77,15 @@ namespace Model
         /// Тип скидки
         /// </summary>
         public abstract DiscountType DiscountType { get; }
+
+        private double CheckValue(double value)
+        {
+            if (value <= 0 || double.IsNaN(value))
+            {
+                throw new ArgumentException(
+                    "Значиение должно быть больше нуля. Повторите ввод.");
+            }
+            return value;
+        }
     }
 }
