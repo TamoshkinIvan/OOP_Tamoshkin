@@ -17,6 +17,9 @@ namespace View
         public AddForm()
         {
             InitializeComponent();
+            #if !DEBUG
+            button1.Visible = false;
+            #endif
         }
 
         public EventHandler<DiscountEventArgs> DiscountAdded;

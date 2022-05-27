@@ -1,0 +1,17 @@
+I:\OOP\OOP_Tamoshkin\LB4\LB4\bin\Release\View.exe.config
+I:\OOP\OOP_Tamoshkin\LB4\LB4\bin\Release\View.exe
+I:\OOP\OOP_Tamoshkin\LB4\LB4\bin\Release\View.pdb
+I:\OOP\OOP_Tamoshkin\LB4\LB4\bin\Release\Model.dll
+I:\OOP\OOP_Tamoshkin\LB4\LB4\bin\Release\Model.pdb
+I:\OOP\OOP_Tamoshkin\LB4\LB4\bin\Release\Model.dll.config
+I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Release\View.csproj.AssemblyReference.cache
+I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Release\View.csproj.SuggestedBindingRedirects.cache
+I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Release\View.AddForm.resources
+I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Release\View.MainForm.resources
+I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Release\View.Properties.Resources.resources
+I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Release\View.SearchForm.resources
+I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Release\View.csproj.GenerateResource.cache
+I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Release\View.csproj.CoreCompileInputs.cache
+I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Release\View.csproj.CopyComplete
+I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Release\View.exe
+I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Release\View.pdb

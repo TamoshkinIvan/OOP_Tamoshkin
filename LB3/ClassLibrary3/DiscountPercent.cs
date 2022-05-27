@@ -1,4 +1,6 @@
-﻿namespace Model
+﻿using System;
+
+namespace Model
 {
     /// <summary>
     /// Класс процентной скидки
@@ -37,11 +39,11 @@
             switch (GoodsType)
             {
                 case GoodsType.Clothes:
-                    return Price * 0.98;
+                    return Math.Round(Price * 0.98, 2);
                 case GoodsType.ChildrenProducts:
-                    return Price * 0.95;
+                    return Math.Round( Price * 0.95, 2);
                 case GoodsType.Food:
-                    return Price * 0.8;
+                    return Math.Round(Price * 0.8, 2);
                 default:
                     return Price;
             }

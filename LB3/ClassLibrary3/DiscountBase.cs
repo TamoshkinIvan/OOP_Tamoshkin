@@ -46,7 +46,7 @@ namespace Model
         /// </summary>
         public double CalculatedDiscount
         {
-            get => Price - FinalPrice;
+            get => Math.Round(Price - FinalPrice, 2);
             set => _discount = CheckValue(value);
         }
 
