@@ -121,6 +121,7 @@ namespace View
             {
                 MessageBoxEvent?.Invoke(
                     "Пожалуйста, укажите цену товара.", EventArgs.Empty);
+                return true;
             }
 
             if (string.IsNullOrEmpty(textBoxCouponDiscount.Text)
@@ -128,6 +129,7 @@ namespace View
             {
                 MessageBoxEvent?.Invoke(
                     "Пожалуйста, укажите величину скидки по купону.", EventArgs.Empty);
+                return true;
             }
             return false;
 
