@@ -24,6 +24,9 @@ namespace Model
             set => _price = CheckValue(value);
         }
 
+        /// <summary>
+        /// Цена с учетом скидки
+        /// </summary>
         private double _finalPrice;
 
         /// <summary>
@@ -38,6 +41,9 @@ namespace Model
 
         private double _discount;
 
+        /// <summary>
+        /// Рассчитанная скидка
+        /// </summary>
         public double CalculatedDiscount
         {
             get => Price - FinalPrice;
@@ -78,6 +84,12 @@ namespace Model
         /// </summary>
         public abstract DiscountType DiscountType { get; }
 
+        /// <summary>
+        /// Метод проверки цены
+        /// </summary>
+        /// <param name="value">Входная цена</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         private double CheckValue(double value)
         {
             if (value <= 0 || double.IsNaN(value))

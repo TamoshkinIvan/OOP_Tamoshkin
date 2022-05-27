@@ -12,7 +12,7 @@ namespace View
     public partial class AddForm : EventForm
     {
         /// <summary>
-        /// 
+        /// Инициализация формы 
         /// </summary>
         public AddForm()
         {
@@ -43,7 +43,7 @@ namespace View
             };
 
         /// <summary>
-        /// 
+        /// Реализация загрузки формы
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -63,7 +63,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реализация добавления скидки в список
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -94,7 +94,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реализация проверки выбранных параметров на форме
         /// </summary>
         /// <returns></returns>
         private bool DataTableAddValidation()
@@ -118,7 +118,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Описание работы Combobox
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -140,13 +140,13 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Метод добавления экземпляра класса DiscountBase
         /// </summary>
         /// <param name="discount"></param>
         /// <param name="good"></param>
         /// <param name="price"></param>
         /// <param name="discountCoupon"></param>
-        /// <returns></returns>
+        /// <returns>Экземпляр класса DiscountBase</returns>
         private DiscountBase GetDiscount(DiscountType discount ,GoodsType good, float price, float discountCoupon)
         {
             switch (discount)
@@ -161,7 +161,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реализация работы отмены действия
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -171,7 +171,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реалиация закрытия формы
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -182,14 +182,13 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реализация добавления рандомного экземпляра
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void RandomDiscountButtonClick(object sender, EventArgs e)
         {
             var rnd = new Random();
-
             var discountType = _discountTypeList[rnd.Next(0, _discountTypeList.Count)];
             var goodType = _goodsTypeList[rnd.Next(0, _goodsTypeList.Count)];
             var discountRandom = GetDiscount(discountType, goodType,

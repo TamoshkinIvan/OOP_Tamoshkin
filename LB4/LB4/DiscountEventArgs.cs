@@ -3,6 +3,9 @@ using Model;
 
 namespace View
 {
+    /// <summary>
+    /// Класс DiscountEventArgs
+    /// </summary>
     public class DiscountEventArgs : EventArgs
     {
         /// <summary>

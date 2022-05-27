@@ -8,12 +8,12 @@ using Model;
 namespace View
 {
     /// <summary>
-    /// 
+    /// Класс основной формы
     /// </summary>
     public partial class MainForm : EventForm
     {
         /// <summary>
-        /// 
+        /// Дефолтный список скидок
         /// </summary>
         private BindingList<DiscountBase> _discountList =
             new BindingList<DiscountBase>()
@@ -23,7 +23,7 @@ namespace View
             };
 
         /// <summary>
-        /// 
+        /// Инициализация основной формы
         /// </summary>
         public MainForm()
         {
@@ -32,7 +32,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Параметры загрузки основной формы
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -51,14 +51,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void groupBox1_Enter(object sender, EventArgs e) { }
-
-        /// <summary>
-        /// 
+        /// Обработчик событий формы
         /// </summary>
         /// <param name="form"></param>
         private void EventHandler(EventForm form)
@@ -79,7 +72,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Вызов сообщения об ошибке
         /// </summary>
         /// <param name="text"></param>
         private void ErrorMessageBox(string text)
@@ -93,7 +86,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Вызов формы добавления скидки
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -114,7 +107,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Вызов формы поиска 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -128,7 +121,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реализация удаления выбранной скидки
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -152,7 +145,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реализация сохранения созданного списка
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -178,7 +171,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реализация загрузки необходимого списка
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -214,10 +207,6 @@ namespace View
             catch (InvalidOperationException _)
             {
                 ErrorMessageBox("Файл поврежден!");
-            }
-            catch (ArgumentException _)
-            {
-                ErrorMessageBox("Неверный формат данных в файле!");
             }
             catch (Exception ex)
             {

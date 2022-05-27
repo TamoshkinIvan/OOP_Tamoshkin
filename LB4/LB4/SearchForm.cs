@@ -7,17 +7,17 @@ using Model;
 namespace View
 {
     /// <summary>
-    /// 
+    /// Класс формы поиска
     /// </summary>
     public partial class SearchForm : EventForm
     {
         /// <summary>
-        /// 
+        /// Источник данных 
         /// </summary>
         private readonly BindingList<DiscountBase> _dataSource;
 
         /// <summary>
-        /// 
+        /// Инициализация формы поиска
         /// </summary>
         /// <param name="dataSource"></param>
         public SearchForm(BindingList<DiscountBase> dataSource)
@@ -27,7 +27,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Загрузка формы поиска
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -50,7 +50,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реализация отмены
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -61,7 +61,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реализация поиска
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -80,7 +80,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Метод поиска выбранной категории
         /// </summary>
         /// <param name="value"></param>
         /// <param name="property"></param>
@@ -106,7 +106,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реализация закрытия формы
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -116,7 +116,7 @@ namespace View
         }
 
         /// <summary>
-        /// 
+        /// Реализация повторной загрузки данных
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
