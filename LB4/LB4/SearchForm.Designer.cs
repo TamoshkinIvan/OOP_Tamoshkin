@@ -51,7 +51,7 @@
             // 
             // Reload
             // 
-            this.Reload.Location = new System.Drawing.Point(303, 361);
+            this.Reload.Location = new System.Drawing.Point(303, 362);
             this.Reload.Name = "Reload";
             this.Reload.Size = new System.Drawing.Size(75, 23);
             this.Reload.TabIndex = 4;

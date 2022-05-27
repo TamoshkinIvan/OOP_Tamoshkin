@@ -97,6 +97,7 @@ namespace Model
                 throw new ArgumentException(
                     "Значиение должно быть больше нуля. Повторите ввод.");
             }
+
             return value;
         }
     }

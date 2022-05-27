@@ -55,10 +55,10 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(361, 329);
+            this.SaveButton.Location = new System.Drawing.Point(361, 328);
             this.SaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.Size = new System.Drawing.Size(75, 24);
             this.SaveButton.TabIndex = 5;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
@@ -66,10 +66,10 @@
             // 
             // ReadButton
             // 
-            this.ReadButton.Location = new System.Drawing.Point(511, 329);
+            this.ReadButton.Location = new System.Drawing.Point(511, 328);
             this.ReadButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReadButton.Name = "ReadButton";
-            this.ReadButton.Size = new System.Drawing.Size(75, 23);
+            this.ReadButton.Size = new System.Drawing.Size(75, 24);
             this.ReadButton.TabIndex = 4;
             this.ReadButton.Text = "Load";
             this.ReadButton.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(48, 328);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 23);
+            this.button1.Size = new System.Drawing.Size(108, 24);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add Discount";
             this.button1.UseVisualStyleBackColor = true;
@@ -97,9 +97,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(643, 329);
+            this.button2.Location = new System.Drawing.Point(643, 328);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 23);
+            this.button2.Size = new System.Drawing.Size(108, 24);
             this.button2.TabIndex = 2;
             this.button2.Text = "Remove Discount";
             this.button2.UseVisualStyleBackColor = true;

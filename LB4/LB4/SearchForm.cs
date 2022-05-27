@@ -68,7 +68,7 @@ namespace View
         private void ButtonSearchClick(object sender, EventArgs e)
         {
             var selectedState = "";
-            if (comboBoxSearch.SelectedIndex != -1)
+            if (comboBoxSearch.SelectedIndex != -1 )
             {
                 selectedState = comboBoxSearch.SelectedItem.ToString();
                 SearchObject(textBoxSearch.Text, selectedState);

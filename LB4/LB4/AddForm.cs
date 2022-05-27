@@ -116,6 +116,19 @@ namespace View
                 return true;
             }
 
+            if (string.IsNullOrEmpty(textBoxPrice.Text)
+                || string.IsNullOrWhiteSpace(textBoxPrice.Text))
+            {
+                MessageBoxEvent?.Invoke(
+                    "Пожалуйста, укажите цену товара.", EventArgs.Empty);
+            }
+
+            if (string.IsNullOrEmpty(textBoxCouponDiscount.Text)
+                || string.IsNullOrWhiteSpace(textBoxCouponDiscount.Text))
+            {
+                MessageBoxEvent?.Invoke(
+                    "Пожалуйста, укажите величину скидки по купону.", EventArgs.Empty);
+            }
             return false;
 
         }

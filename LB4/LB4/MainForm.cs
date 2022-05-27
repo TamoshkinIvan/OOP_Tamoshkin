@@ -127,7 +127,7 @@ namespace View
         /// <param name="e"></param>
         private void ButtonDeleteClick(object sender, EventArgs e)
         {
-            if (dataGridViewData.SelectedRows.Count == 0)
+            if (dataGridViewData.SelectedRows.Count == 0 && dataGridViewData.RowCount != 0)
             {
                 ErrorMessageBox("Не выбрана строка для удаления.");
                 return;
@@ -207,12 +207,7 @@ namespace View
             {
                 ErrorMessageBox("Файл поврежден!");
             }
-            catch (Exception ex)
-            {
-                //TODO:
-                ErrorMessageBox(ex.Message);
-            }
-            
+
         }
     }
 }
