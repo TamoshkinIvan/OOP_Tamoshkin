@@ -205,7 +205,7 @@ namespace View
             }
             catch (InvalidOperationException _)
             {
-                ErrorMessageBox("Файл поврежден!");
+                ErrorMessageBox("Файл поврежден");
             }
 
         }
