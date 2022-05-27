@@ -187,8 +187,7 @@ namespace View
             {
                 return;
             }
-
-            //TODO: RSDN+
+            
             var xmlSerializer =
                 new XmlSerializer(typeof(BindingList<DiscountBase>));
 
