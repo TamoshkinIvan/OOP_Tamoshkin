@@ -39,10 +39,7 @@ namespace View
         private void MainFormLoad(object sender, EventArgs e)
         {
             dataGridViewData.RowHeadersVisible = false;
-            dataGridViewData.Width = 603;
-
             dataGridViewData.DataSource = _discountList;
-
             dataGridViewData.Columns[0].Width = 150;
             dataGridViewData.Columns[1].Width = 150;
             dataGridViewData.Columns[2].Width = 150;
@@ -89,7 +86,7 @@ namespace View
         {
             MessageBox.Show(this,
                 text,
-                "Error!",
+                "Ошибка!",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error,
                 MessageBoxDefaultButton.Button1);
@@ -198,8 +195,8 @@ namespace View
                 return;
             }
 
-            //TODO: RSDN
-            var XmlSerializer =
+            //TODO: RSDN+
+            var xmlSerializer =
                 new XmlSerializer(typeof(BindingList<DiscountBase>));
 
             try
@@ -207,7 +204,7 @@ namespace View
                 using (var fileReader = new FileStream(path, FileMode.Open))
                 {
                     _discountList = (BindingList<DiscountBase>)
-                        XmlSerializer.Deserialize(fileReader);
+                        xmlSerializer.Deserialize(fileReader);
 
                 }
 
@@ -216,12 +213,11 @@ namespace View
             }
             catch (InvalidOperationException _)
             {
-                ErrorMessageBox("Файл поврежден.");
+                ErrorMessageBox("Файл поврежден!");
             }
             catch (ArgumentException _)
             {
-                //TODO:
-                ErrorMessageBox("Not valid data in file");
+                ErrorMessageBox("Неверный формат данных в файле!");
             }
             catch (Exception ex)
             {

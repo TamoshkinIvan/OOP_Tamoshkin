@@ -41,7 +41,7 @@
             // 
             // Cance
             // 
-            this.Cance.Location = new System.Drawing.Point(362, 313);
+            this.Cance.Location = new System.Drawing.Point(424, 362);
             this.Cance.Name = "Cance";
             this.Cance.Size = new System.Drawing.Size(75, 23);
             this.Cance.TabIndex = 5;
@@ -51,17 +51,17 @@
             // 
             // Reload
             // 
-            this.Reload.Location = new System.Drawing.Point(241, 312);
+            this.Reload.Location = new System.Drawing.Point(303, 361);
             this.Reload.Name = "Reload";
             this.Reload.Size = new System.Drawing.Size(75, 23);
             this.Reload.TabIndex = 4;
-            this.Reload.Text = "Reload";
+            this.Reload.Text = "Refresh";
             this.Reload.UseVisualStyleBackColor = true;
             this.Reload.Click += new System.EventHandler(this.ButtonReloadClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(116, 313);
+            this.button1.Location = new System.Drawing.Point(178, 362);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -73,14 +73,14 @@
             // 
             this.comboBoxSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxSearch.FormattingEnabled = true;
-            this.comboBoxSearch.Location = new System.Drawing.Point(316, 266);
+            this.comboBoxSearch.Location = new System.Drawing.Point(378, 315);
             this.comboBoxSearch.Name = "comboBoxSearch";
             this.comboBoxSearch.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSearch.TabIndex = 2;
             // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(116, 266);
+            this.textBoxSearch.Location = new System.Drawing.Point(178, 315);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(100, 20);
             this.textBoxSearch.TabIndex = 1;
@@ -93,24 +93,23 @@
             this.dataGridViewSearch.Location = new System.Drawing.Point(10, 24);
             this.dataGridViewSearch.Name = "dataGridViewSearch";
             this.dataGridViewSearch.ReadOnly = true;
-            this.dataGridViewSearch.Size = new System.Drawing.Size(544, 150);
+            this.dataGridViewSearch.Size = new System.Drawing.Size(707, 265);
             this.dataGridViewSearch.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(116, 248);
+            this.label1.Location = new System.Drawing.Point(178, 297);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Search Value";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(316, 248);
+            this.label2.Location = new System.Drawing.Point(378, 297);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
@@ -122,7 +121,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(618, 396);
+            this.ClientSize = new System.Drawing.Size(723, 396);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Cance);

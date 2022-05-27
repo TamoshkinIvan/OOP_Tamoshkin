@@ -3,12 +3,12 @@ using System.Windows.Forms;
 
 namespace View
 {
-    //TODO:
+    //TODO:+
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class EventForm : Form
     {
-        //TODO:
-        internal EventHandler<DiscountEventArgs> DiscountAdded;
-
         internal EventHandler CloseForm;
 
         internal EventHandler CancelForm;

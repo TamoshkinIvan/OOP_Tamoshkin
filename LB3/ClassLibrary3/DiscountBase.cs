@@ -13,17 +13,17 @@ namespace Model
         /// <summary>
         /// Сумма покупки указанной категории товара
         /// </summary>
-        private float _price;
+        private double  _price;
 
         /// <summary>
         /// Цена указанной категории товара
         /// </summary>
-        public float Price
+        public double Price
         {
             get => _price;
             set
             {
-                if (value <= 0)
+                if (value <= 0 || double.IsNaN(value) )
                 {
                     throw new ArgumentException(
                         "Сумма покупки должна быть больше нуля. Повторите ввод.");
@@ -41,6 +41,15 @@ namespace Model
             set => CalculateDiscount();
         }
 
+
+        private double _discount;
+
+        public double CalculatedDiscount
+        {
+            get => Price - FinalPrice;
+            set => _discount = value;
+        }
+
         /// <summary>
         /// Категория товара
         /// </summary>
@@ -51,7 +60,7 @@ namespace Model
         /// </summary>
         /// <param name="good">Категория товара</param>
         /// <param name="price">Цена</param>
-        protected DiscountBase(GoodsType good, float price)
+        protected DiscountBase(GoodsType good, double price)
         {
             Price = price;
             GoodsType = good;

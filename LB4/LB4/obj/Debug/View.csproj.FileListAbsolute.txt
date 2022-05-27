@@ -7,7 +7,6 @@ I:\OOP\OOP_Tamoshkin\LB4\LB4\bin\Debug\Model.dll.config
 I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Debug\View.csproj.AssemblyReference.cache
 I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Debug\View.csproj.SuggestedBindingRedirects.cache
 I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Debug\View.Properties.Resources.resources
-I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Debug\View.TextBoxUserControl.resources
 I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Debug\View.csproj.GenerateResource.cache
 I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Debug\View.csproj.CoreCompileInputs.cache
 I:\OOP\OOP_Tamoshkin\LB4\LB4\obj\Debug\View.csproj.CopyComplete

@@ -36,7 +36,7 @@ namespace View
             dataGridViewSearch.RowsDefaultCellStyle.Alignment
                 = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewSearch.RowHeadersVisible = false;
-            dataGridViewSearch.Width = 603;
+            //dataGridViewSearch.Width = 603;
             dataGridViewSearch.DataSource = _dataSource;
             dataGridViewSearch.Columns[0].Width = 150;
             dataGridViewSearch.Columns[1].Width = 150;
@@ -87,7 +87,7 @@ namespace View
         private void SearchObject(string value, string property)
         {
             dataGridViewSearch.DataSource = _dataSource;
-            var foundDiscont = new List<DiscountBase>();
+            var foundDiscount = new List<DiscountBase>();
             if (_dataSource.Count == 0)
             {
                 MessageBoxEvent?.Invoke("Таблица пуста.", EventArgs.Empty);
@@ -98,11 +98,11 @@ namespace View
                 if (typeof(DiscountBase).
                     GetProperty(property).GetValue(discount).ToString() == value)
                 {
-                    foundDiscont.Add(discount);
+                    foundDiscount.Add(discount);
                 }
             }
 
-            dataGridViewSearch.DataSource = foundDiscont;
+            dataGridViewSearch.DataSource = foundDiscount;
         }
 
         /// <summary>
@@ -124,13 +124,5 @@ namespace View
         {
             dataGridViewSearch.DataSource = _dataSource;
         }
-
-        //TODO:?
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void label1_Click(object sender, EventArgs e){}
-    }
+        }
 }

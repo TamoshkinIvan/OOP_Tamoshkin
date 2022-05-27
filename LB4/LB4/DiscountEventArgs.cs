@@ -3,7 +3,7 @@ using Model;
 
 namespace View
 {
-    internal class DiscountEventArgs : EventArgs
+    public class DiscountEventArgs : EventArgs
     {
         /// <summary>
         /// Добавление скидки

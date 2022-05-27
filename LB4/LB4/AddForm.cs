@@ -19,6 +19,8 @@ namespace View
             InitializeComponent();
         }
 
+        public EventHandler<DiscountEventArgs> DiscountAdded;
+
         /// <summary>
         /// Список товаров
         /// </summary>
