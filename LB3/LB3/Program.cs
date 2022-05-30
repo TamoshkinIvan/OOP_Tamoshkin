@@ -13,10 +13,10 @@ namespace LB3
             var discountList = new List<DiscountBase>()
             {
                 new DiscountCoupon(GoodsType.Food, 3000, 250),
-                new DiscountPercent(GoodsType.Food, 982)
+                new DiscountPercent(GoodsType.Food, 9182)
             };
 
-            foreach (var discount in discountList)
+            foreach (var discount  discountList)
             {
                 Console.WriteLine(GetTax(discount));
             }
